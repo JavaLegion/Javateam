@@ -27,6 +27,10 @@
         <div class="page-container">
             <h1>登录(Login)</h1>
             <form action="" method="post">
+           			 <select id="test" name="">
+						<option value="student">学生用户</option>
+						<option value="seller">商家用户</option>
+					</select>
                 <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
                 <input type="password" name="password" class="password" placeholder="请输入您的用户密码！">
               <input type="Captcha" class="Captcha" name="Captcha" placeholder="请输入验证码！">
