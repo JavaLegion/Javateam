@@ -8,7 +8,7 @@
 <link href="css/message.css" rel="stylesheet">
 </head>
 <body>
-<div class="">
+<div class="mid">
 <h1>修改基本信息</h1>
         <table>
         <tr>

@@ -33,25 +33,7 @@ form {
     margin: 15px auto 0 auto;
     text-align: center;
 }
-select{
-	    width: 170px;
-   		 height: 25px;
-   /* 		  margin-top: 25px;
-    padding: 0 15px;
-    background: #2d2d2d; browsers that don't support rgba
-    background: rgba(45,45,45,.15); */
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;/*  处理圆角效果*/
-    border-radius: 6px;/* 边框处理圆角效果 */
-    border: 1px solid #3d3d3d; /* browsers that don't support rgba */
-    border: 1px solid rgba(255,255,255,.15);
-    -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
-    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;/*  阴影类型*/
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    
-}
+
 input {
     width: 270px;
     height: 42px;
@@ -159,22 +141,6 @@ button:active {
 
     border: 0px solid #ef4300;
 }
-
-
-.register_ff  .register_ff{
-	background-color:chocolate;
-	border-radius: 4px;
-	font-family: "微软雅黑";
-	padding: 8px 15px;
-	color: wheat;
-	float:right;
-	margin-right:5px;
-	margin-top: -60px;
-	font-size:13px;
-	cursor:pointer;
-}
-
-
 /* 
 .error {
     display: none;

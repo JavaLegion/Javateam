@@ -132,7 +132,7 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="4.html">
+            <a href="#">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>

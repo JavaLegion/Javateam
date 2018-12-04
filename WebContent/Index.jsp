@@ -14,6 +14,7 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/robot.css" rel="stylesheet" type="text/css"/>
+    <link href="css/search.css" rel="stylesheet" type="text/css"/>
     
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -63,6 +64,14 @@
                                 <li><a href="ChangeMsg.jsp">修改基本信息</a></li>
                                 <li><a href="ChangePwd.jsp">修改密码</a></li>
                             </ul>
+                         <li>
+                              <div class="search"> 
+                                       <form> 
+                                             <input type="text" placeholder="搜索从这里开始..."> 
+                                             <button type="submit"></button> 
+                                       </form> 
+                              </div> 
+                         </li>
                     </ul>
                 </div>
             </div>
