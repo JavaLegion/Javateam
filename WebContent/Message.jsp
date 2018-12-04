@@ -13,7 +13,8 @@
 
 </head>
 <body>
-<div class="">
+<div class="linear">
+<div class="mid">
 <h1>我的信息</h1>
         <table>
         <tr>
@@ -52,7 +53,8 @@
             <td class="">地址：</td>
             <td>江西省南昌市南昌县昌东镇紫阳大道99号</td>
         </tr>
-    </table>    
+    </table> 
+    </div>   
 </div>
 </body>
 </html>

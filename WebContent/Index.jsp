@@ -13,12 +13,14 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/robot.css" rel="stylesheet" type="text/css"/>
     
     <script src="js/ie-emulation-modes-warning.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/robot.js"></script>
     
 </head>
 <body>
@@ -288,6 +290,19 @@
     <!--手机分页 end-->
 </div>
 <!-- /.container -->
+<div class="yb_conct">
+  <div class="yb_bar">
+    <ul>
+      <li class="yb_top">返回顶部</li>
+      <li class="yb_phone">13065113592</li>
+      <li class="yb_QQ">
+      	<a target="_blank" href="https://www.baidu.com/">在线咨询</a>
+      </li>
+      <li class="yb_ercode" style="height:53px;">微信二维码 <br>
+        <img class="hd_qr" src="images/weixin.png" width="125" alt="关注你附近"> </li>
+    </ul>
+  </div>
+</div>
 <footer>
 
     <div class="cp-foonter">
