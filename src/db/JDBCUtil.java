@@ -89,6 +89,15 @@ public class JDBCUtil {
 				}
 				return pst;
 			}
+	public static String getServletValue(int  end) {
+				String endrs="";
+				if(end!=0){
+					  endrs="1";
+				  }else{
+					  endrs="0";
+				  }
+			return endrs;
+			}
 		
 }
 

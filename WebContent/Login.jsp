@@ -26,20 +26,20 @@
 <body>
         <div class="page-container">
             <h1>登录(Login)</h1>
-            <form action="" method="post">
+            <form action="StuLoginController" method="post">
            			 <select id="test" name="">
 						<option value="student">学生用户</option>
 						<option value="seller">商家用户</option>
 					</select>
-                <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
-                <input type="password" name="password" class="password" placeholder="请输入您的用户密码！">
-              <input type="Captcha" class="Captcha" name="Captcha" placeholder="请输入验证码！">
+                <input type="text" name="stuid" class="username" placeholder="请输入您的学号！">
+                <input type="password" name="psd" class="password" placeholder="请输入您的用户密码！">
+              <input type="Captcha" class="Captcha" name="checkcode" placeholder="请输入验证码！">
               <br><br>   
                  <img id="imgObj" alt="验证码"
             src="${pageContext.request.contextPath}/getCode">
              
-               <span> <button type="submit" class="submit_button">登录</button>
-               <button type="submit" class="submit_button">注册</button></span>
+               <button type="submit" class="submit_button">登录</button>
+               <!-- <button type="submit" class="submit_button">注册</button> -->
                 <!--  <div class="error"><span>+++++</span></div>-->
             </form>
             
