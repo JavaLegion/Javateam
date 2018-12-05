@@ -9,7 +9,7 @@ body {
   height: 100%;
   width: 100%;
   background:#f2f3b6;
-
+  background-image: url("../images/message/message2.jpg");
 }
 /* * { margin:0; padding:0; } */
 /* body { background:#111; height:100%; } */
@@ -39,7 +39,7 @@ body {
 	text-align:center;
 	width:800px;
 	height:600px;
-	background-image: url("../images/message/message1.jpg");
+
 }
 /* .linear{  */
 /* 		width:100%;  */

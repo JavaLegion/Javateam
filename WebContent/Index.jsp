@@ -14,6 +14,7 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/robot.css" rel="stylesheet" type="text/css"/>
+    <link href="css/search.css" rel="stylesheet" type="text/css"/>
     
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -21,6 +22,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/robot.js"></script>
+    
     
 </head>
 <body>
@@ -63,6 +65,14 @@
                                 <li><a href="ChangeMsg.jsp">修改基本信息</a></li>
                                 <li><a href="ChangePwd.jsp">修改密码</a></li>
                             </ul>
+                            <li>
+                                  <div class="search bar">
+                                          <form>
+                                              <input type="text" placeholder="输入搜索的内容">
+                                              <button type="submit"></button>
+                                          </form>
+                                  </div>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -145,7 +155,6 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
                     </dd>
                 </dl>
             </a>

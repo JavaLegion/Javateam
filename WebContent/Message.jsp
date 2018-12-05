@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<div class="linear">
+<div class="">
 <div class="mid">
 <h1>我的信息</h1>
         <table>
