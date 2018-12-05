@@ -35,10 +35,11 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
-            <div><textarea></textarea></div>
+<!--             <div><textarea></textarea></div> -->
         </div>
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
             <a href="#">
@@ -51,23 +52,7 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
@@ -83,7 +68,7 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
@@ -99,7 +84,7 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
@@ -115,7 +100,7 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
@@ -131,7 +116,7 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
@@ -147,7 +132,23 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
-
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
+                    </dd>
+                </dl>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
+            <a href="#">
+                <dl class="dl-horizontal">
+                    <dt><img src="images/logo2.jpg" alt=""/></dt>
+                    <dd>
+                        <h3>工作类型（例如：外卖员）</h3>
+                        <h5>兼职介绍</h5>
+                    <span class="wpw-span">
+                       <span>兼职时间地点</span>
+                       <span>工资</span>
+                    </span>
+                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
                     </dd>
                 </dl>
             </a>
