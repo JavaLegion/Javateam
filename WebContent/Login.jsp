@@ -37,9 +37,11 @@
               <br><br>   
                  <img id="imgObj" alt="验证码"
             src="${pageContext.request.contextPath}/getCode">
+             <a href="#" onclick="changeImg()"> 换一张</a>
              
                <button type="submit" class="submit_button">登录</button>
-               <!-- <button type="submit" class="submit_button">注册</button> -->
+               <button class="register_button" onclick="javascript:window.location.href='Register.jsp';">注册</button>
+             
                 <!--  <div class="error"><span>+++++</span></div>-->
             </form>
             

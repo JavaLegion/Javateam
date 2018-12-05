@@ -1,14 +1,4 @@
-﻿/*
- *
- * Template Name: Fullscreen Login
- * Description: Login Template with Fullscreen Background Slideshow
- * Author: Anli Zaimi
- * Author URI: http://azmind.com
- *
- */
-
-
-body {
+﻿body {
     background: #f8f8f8;
     text-align: center;
     color: #fff;
@@ -231,6 +221,7 @@ button:active {
 /*－－－增加部份的CSS－－－*/
 form,input,button{font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif; text-decoration:none; width:100%;}
 button.submit_button{ font-size:24px; letter-spacing:15px;}
+button.register_button{ font-size:24px; letter-spacing:15px;}
 input.Captcha{ width:130px; float:left;}
 
 

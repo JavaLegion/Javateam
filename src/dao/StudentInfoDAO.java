@@ -37,4 +37,6 @@ public class StudentInfoDAO {
 		return ends;
 	}
 	
+//	public static String Registerpart{}
+//	
 }
