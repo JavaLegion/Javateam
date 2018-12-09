@@ -33,7 +33,7 @@
                 <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
                 <input type="password" name="password1" class="password" placeholder="请输入您的用户密码！">
                 <input type="password" name="password2" class="password" placeholder="请再次输入您的用户密码！">
-                <input type="text" name="phonenumber" class="password" placeholder="请输入您的手机号码！">
+                <input type="text" name="phonenumber" class="phone" placeholder="请输入您的手机号码！">
                 <input type="Captcha" class="Captcha" name="Captcha" placeholder="请输入验证码！">
                 <button type="submit" class="submit_button">注册</button>
                
@@ -47,7 +47,7 @@
                 <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
                 <input type="password" name="password1" class="password" placeholder="请输入您的用户密码！">
                 <input type="password" name="password2" class="password" placeholder="请再次输入您的用户密码！">
-                <input type="text" name="phonenumber" class="password" placeholder="请输入您的手机号码！">
+                <input type="text" name="phonenumber" class="phone" placeholder="请输入您的手机号码！">
                 <input type="Captcha" class="Captcha" name="Captcha" placeholder="请输入验证码！">
                 <button type="submit" class="submit_button">注册</button>
                

@@ -5,7 +5,7 @@
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/part-time job?useSSL=false</property>
         <property name="user">root</property>
-        <property name="password">123</property>
+        <property name="password">111111</property>
         <!-- 初始化池大小 -->
         <property name="initialPoolSize">2</property>
         <!-- 最大空闲时间 -->

@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class FindWorkController
  */
 @WebServlet("/FindWorkController")
-public class FindWorkController extends HttpServlet {
+public class QueryWorkController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FindWorkController() {
+    public QueryWorkController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,6 +36,8 @@ public class FindWorkController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 	}
 
 }
