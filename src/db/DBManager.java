@@ -11,9 +11,9 @@ public class DBManager {
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		String url ="jdbc:mysql://localhost:3306/ll?charactorEncoding=utf-8";
+		String url ="jdbc:mysql://localhost:3306/test?charactorEncoding=utf-8";
 		String user = "root";
-		String password = "000000";
+		String password = "123456";
 	
 		Connection conn = null;
 		try {

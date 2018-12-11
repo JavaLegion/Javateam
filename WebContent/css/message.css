@@ -22,6 +22,7 @@ body {
 
 table,tr,td{
 	border:0px solid #000000;
+	
 }
 table{
 	margin:auto;
@@ -31,10 +32,32 @@ table{
 tr
 {
     height:40px;
+    text-align:center;
 }
 td{
 	text-align:center;
 	height:0px;
     vertical-align:bottom;
     padding:0px;
+    text-align:center;
+}
+.ttd{
+	width:100px;
+	float:left;
+}
+.request{
+    width:180px;
+	height:30px;
+	float:left;
+}
+.box1{
+	float:left;
+}
+.time{
+	float:left;
+	width:100px;
+}
+.num{
+	width:40px;
+	float:left;
 }

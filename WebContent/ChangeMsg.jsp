@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td class="">姓名：</td>
-            <td><input type="password" name="pwd"></td>
+            <td><input type="text" name="user"></td>
         </tr>
         <tr>
             <td class="">营业执照：</td>
@@ -32,19 +32,19 @@
             <td><input type="text" name="user"></td>
         </tr>
         <tr>
-            <td class="">地址：</td>
+            <td class="">商业类型：</td>
             <td><input type="text" name="user"></td>
         </tr>
         <tr>
-            <td class="">地址：</td>
+            <td class="">经营范围：</td>
             <td><input type="text" name="user"></td>
         </tr>
         <tr>
-            <td class="">地址：</td>
+            <td class="">自我介绍：</td>
             <td><input type="text" name="user"></td>
         </tr>
         <tr>
-            <td class="">地址：</td>
+            <td class="">用户体验：</td>
             <td><input type="text" name="user"></td>
         </tr>
     </table>    

@@ -32,6 +32,8 @@ public class ReleaseWorkController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		doPost(request, response);
 	}
 
 	/**
@@ -39,17 +41,18 @@ public class ReleaseWorkController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF=8");
 		String workname = request.getParameter("workname");
-		int worktime = Integer.parseInt(request.getParameter("worktime"));
+		String worktime = request.getParameter("worktime");
 		String sworkdate = request.getParameter("sworkdate");	 	
 		String fworkdate = request.getParameter("fworkdate");	 
-		int worksalary = Integer.parseInt(request.getParameter("worksalary"));
+		String worksalary = request.getParameter("worksalary");
 		String workreq =request.getParameter("workreq");
 		try {
-			MerchantInfoDAO.ReleaseWork(workname, worktime, sworkdate, fworkdate, worksalary, workreq);
+			MerchantInfoDAO.ReleaseWork(workname, worktime, sworkdate ,fworkdate, worksalary, workreq);
+			response.sendRedirect("Index.jsp");
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

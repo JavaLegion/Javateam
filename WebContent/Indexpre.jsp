@@ -40,20 +40,21 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse navbar-right">
                     <ul class="nav navbar-nav navbar-navxg">
-                        <li class="active"><a href="Index.jsp">首页</a></li>
+                        <li class="active"><a href="Indexpre.jsp">首页</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">查找兼职 <span class="caret"></span></a>
+                            <a href="Login.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">查找兼职 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">按时间</a></li>
-                                <li><a href="#">按工资</a></li>
-                                <li><a href="#">按地点</a></li>
+                                <li><a href="Login.jsp">按时间</a></li>
+                                <li><a href="Login.jsp">按工资</a></li>
+                                <li><a href="Login.jsp">按地点</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
-                        <li><a href="MyRecord.jsp">兼职记录</a></li>
+                        <li><a href="Login.jsp">发布兼职</a></li>
+                        <li><a href="Login.jsp">兼职记录</a></li>
                         <li>
                         <div >
                                <a href="Login.jsp">登录</a>/

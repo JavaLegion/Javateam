@@ -38,20 +38,20 @@
             <td>江西省南昌市南昌县昌东镇紫阳大道99号</td>
         </tr>
         <tr>
-            <td class="">地址：</td>
-            <td>江西省南昌市南昌县昌东镇紫阳大道99号</td>
+            <td class="">商业类型：</td>
+            <td>餐饮</td>
         </tr>
         <tr>
-            <td class="">地址：</td>
-            <td>江西省南昌市南昌县昌东镇紫阳大道99号</td>
+            <td class="">经营范围：</td>
+            <td>江西师范大学</td>
         </tr>
         <tr>
-            <td class="">地址：</td>
-            <td>江西省南昌市南昌县昌东镇紫阳大道99号</td>
+            <td class="">自我介绍：</td>
+            <td>乐观向上</td>
         </tr>
         <tr>
-            <td class="">地址：</td>
-            <td>江西省南昌市南昌县昌东镇紫阳大道99号</td>
+            <td class="">用户体验：</td>
+            <td>极好</td>
         </tr>
     </table> 
     </div>   
