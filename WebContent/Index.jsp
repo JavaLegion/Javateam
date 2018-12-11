@@ -157,11 +157,13 @@
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
+                        <h3>workname（例如：外卖员）</h3>
+                        <h5>workreq</h5>
                     <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
+                       <span>worktime</span>
+                       <span>worksalary</span>
+                        <span>sworkdate</span>
+                        <span>fworkdate</span>
                     </span>
                     </dd>
                 </dl>
@@ -178,6 +180,7 @@
                        <span>兼职时间地点</span>
                        <span>工资</span>
                     </span>
+                    
 
                     </dd>
                 </dl>

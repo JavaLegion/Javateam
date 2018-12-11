@@ -9,6 +9,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import com.alibaba.fastjson.JSONObject;
  
 
@@ -21,6 +22,7 @@ public class GetMessageCode {
 	public static String getCode(String phone) {
 		String rod = smsCode();
 		System.out.println("rod验证码="+rod);
+	
 		String timestamp = getTimestamp();
 		String sig = getMD5(ACCOUNT_SID, AUTH_TOKEN, timestamp);
 		String tamp = "【RogerTeam】您的验证码为"+rod+"，请于3分钟内正确输入，如非本人操作，请忽略此短信。";
@@ -52,14 +54,7 @@ public class GetMessageCode {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		JSONObject json = JSONObject.parseObject(result.toString());
-		String respCode = json.getString("respCode");
-		String defaultRespCode = "00000";
-		if (defaultRespCode.equals(respCode)) {
-			return rod;
-		} else {
-			return defaultRespCode;
-		}
+		return rod;
 	}
  
 	// 定义一个请求参数拼接方法

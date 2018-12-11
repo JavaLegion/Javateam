@@ -37,6 +37,27 @@ public class StudentInfoDAO {
 		return ends;
 	}
 	
-//	public static String Registerpart{}
-//	
+	public static String RegistPart(String stuid, String psd1,String phnum) {
+		String ends=null;
+		Connection conn= null;
+		PreparedStatement ps= null; 
+		int i =0;
+		String sql = "insert into student(stunum,stuid,stupwd, stuphone) values(null,?,?,?)";
+		conn=JDBCUtil.getConnection();
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setString(1, stuid);
+			ps.setString(2, psd1);
+			ps.setString(3, phnum);
+			i = JDBCUtil.executeupdate(ps);
+			ends=JDBCUtil.getServletValue(i);
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConn(conn);
+		}
+	
+		return ends;
+	}
 }

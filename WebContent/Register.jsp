@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,13 +30,21 @@
         <div class="page-container"   style="display:none;"  id="students">
             <h1>学生注册(Regist) </h1>
             <button id="change2" onclick="students()">我是商家</button>
-            <form action="" method="post">
-                <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
-                <input type="password" name="password1" class="password" placeholder="请输入您的用户密码！">
-                <input type="password" name="password2" class="password" placeholder="请再次输入您的用户密码！">
-                <input type="text" name="phonenumber" class="phone" placeholder="请输入您的手机号码！">
-                <input type="Captcha" class="Captcha" name="Captcha" placeholder="请输入验证码！">
-                <button type="submit" class="submit_button">注册</button>
+            <form action="RegisterController" method="post">
+             <input type="text" name="stuid"  id="stuid" class="username" placeholder="请输入您的用户名！">
+             <span id="stuidInfo"></span>
+                <input type="password" name="psd1"  id="psd1"   class="password" placeholder="请输入您的用户密码！">
+                <span id="psd1Info"></span>
+                <input type="password" name="psd2"   id="psd2"  class="password" placeholder="请再次输入您的用户密码！">
+                <span id="psd2Info"></span>
+                <input type="text" name="phnum"  id="phnum" class="phone" placeholder="请输入您的手机号码！">
+               <span id="phnumInfo"></span>
+                <input type="Captcha" class="Captcha" name="checkCode"  id="checkCode" placeholder="请输入验证码！">
+                <br>  <br>  <br>  <br>
+               <span id="checkCodeInfo"></span>
+             
+                <input type="button"  onclick=sendMsg()  value="获取验证码">
+                <input type="submit"  id="submit1"  name="submit1" value="注册">
                
             </form>
             
@@ -44,11 +53,18 @@
             <h1>商家注册(Regist)</h1>
              <button class="register_ff" id="change" onclick="sellers()"  >我是学生</button>
             <form action="" method="post">
-                <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
-                <input type="password" name="password1" class="password" placeholder="请输入您的用户密码！">
-                <input type="password" name="password2" class="password" placeholder="请再次输入您的用户密码！">
-                <input type="text" name="phonenumber" class="phone" placeholder="请输入您的手机号码！">
-                <input type="Captcha" class="Captcha" name="Captcha" placeholder="请输入验证码！">
+                <input type="text" name="sellname"  id="sellname" class="username" placeholder="请输入您的用户名！">
+                <span id="sellnameInfo"></span>
+                <input type="password" name="spsd1"  id="spsd1"   class="password" placeholder="请输入您的用户密码！">
+                <span id="spsd1Info"></span>
+                <input type="password" name="spsd2"   id="spsd2"  class="password" placeholder="请再次输入您的用户密码！">
+                <span id="spsd2Info"></span>
+                <input type="text" name="sphnum"  id="sphnum" class="phone" placeholder="请输入您的手机号码！">
+                <span id="sphnumInfo"></span>
+                <input type="Captcha" class="Captcha" name="scheckCode"  id="scheckCode" placeholder="请输入验证码！">
+                <br>  <br>  <br>  <br>
+                <span id="scheckCodeInfo"></span>
+                <button onclick="sendMsg()">获取验证码</button>
                 <button type="submit" class="submit_button">注册</button>
                
             </form>
