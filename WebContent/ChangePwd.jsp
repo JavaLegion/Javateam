@@ -5,23 +5,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>修改密码</title>
+<!-- css -->
 <link href="css/message.css" rel="stylesheet">
+<!-- js -->
+<script src="assets/js/jquery-1.8.2.min.js" ></script>
+<script src="assets/js/changePwd.js" ></script>
 </head>
 <body>
 <div class="mid">
 <h1>修改密码</h1>
+
+
         <table>
         <tr>
             <td class="">请输入原始密码：</td>
-            <td><input type="text" name="user"></td>
+            <td><input type="password"  name="oldPwd"  id="oldPwd"></td>
+           <td><span id="oldPwdInfo"></span></td> 
         </tr>
         <tr>
-            <td class="">请输入修改的密码：</td>
-            <td><input type="password" name="pwd"></td>
+            <td class="">请输入修改密码：</td>
+            <td><input type="password" name="newPwd1"  id="newPwd1"></td>
+           <td><span id="newPwd1Info"></span></td>
         </tr>
+        
         <tr>
             <td class="">确认修改的密码：</td>
-            <td><input type="text" name="user"></td>
+            <td><input type="password"  name="newPwd2"  id="newPwd2"></td>
+           <td><span id="newPwd2Info"></span></td>
+        </tr>
+        <tr>
+        	<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input type="button"  value="提交"></td>
         </tr>
     </table>    
 </div>	

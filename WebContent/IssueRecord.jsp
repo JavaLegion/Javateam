@@ -1,3 +1,4 @@
+<%@page import="org.apache.catalina.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -37,7 +38,7 @@
                     </span>
                     <span class="wpw-span">
                        <span>兼职时长</span>
-                       <span>工资</span>
+                       <span><%=%>out.print(user.getWorksalary())</span>
                     </span>
                     </dd>
                 </dl>

@@ -2,13 +2,15 @@ package controller;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.util.List;
+import bean.WorkInfo;
 import dao.MerchantInfoDAO;
 
 /**
@@ -44,17 +46,21 @@ public class ReleaseWorkController extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF=8");
+		
+		
+		
 		String workname = request.getParameter("workname");
 		String worktime = request.getParameter("worktime");
 		String sworkdate = request.getParameter("sworkdate");	 	
 		String fworkdate = request.getParameter("fworkdate");	 
 		String worksalary = request.getParameter("worksalary");
 		String workreq =request.getParameter("workreq");
+
+	
 		try {
 			MerchantInfoDAO.ReleaseWork(workname, worktime, sworkdate ,fworkdate, worksalary, workreq);
 			response.sendRedirect("Index.jsp");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

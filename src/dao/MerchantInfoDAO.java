@@ -13,14 +13,13 @@ import db.JDBCUtil;
 
 
 public class MerchantInfoDAO {
-	
+	//发布兼职
 	public static void ReleaseWork(String workname,String worktime,String sworkdate,String fworkdate,String worksalary,String workreq ) throws ParseException{
 	
 	    Connection conn= null;
 		PreparedStatement ps= null; 
 		String sql = "insert into work1(workname,worktime,sworkdate,fworkdate,worksalary,workreq) values(?,?,?,?,?,?)";
 		
-		ResultSet rs=null;
 		conn=JDBCUtil.getConnection();
 		try {
 			ps=conn.prepareStatement(sql);
@@ -36,4 +35,5 @@ public class MerchantInfoDAO {
 			e.printStackTrace();
 		}			
 	}
+	//显示兼职信息
 }

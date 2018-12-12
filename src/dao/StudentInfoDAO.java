@@ -33,6 +33,8 @@ public class StudentInfoDAO {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConn(conn);
 		}
 		return ends;
 	}
@@ -58,6 +60,33 @@ public class StudentInfoDAO {
 			JDBCUtil.closeConn(conn);
 		}
 	
+		return ends;
+	}
+	public static String checkStuId(String stuid) {
+		String ends=null;
+		Connection conn= null;
+		PreparedStatement ps= null; 
+		ResultSet rs= null;
+		String sql = "select count(*) from student where stuid=?";
+		conn=JDBCUtil.getConnection();
+		try {
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, stuid);
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		rs=JDBCUtil.executeQuery(ps);
+		try {
+			while (rs.next()) {
+				int result = rs.getInt(1);
+				ends =JDBCUtil.getServletValue(result);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConn(conn);
+		}
 		return ends;
 	}
 }

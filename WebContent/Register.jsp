@@ -21,8 +21,8 @@
         <script src="assets/js/supersized.3.2.7.min.js" ></script>
         <script src="assets/js/supersized-init.js" ></script>
         <script src="assets/js/scripts.js" ></script>
-        <script src="assets/js/rigist.js" ></script>
-
+        <script src="assets/js/sturegist.js" ></script>
+		<script src="assets/js/sellRegist.js" ></script>
     </head>
 
     <body>
@@ -42,10 +42,9 @@
                 <input type="Captcha" class="Captcha" name="checkCode"  id="checkCode" placeholder="请输入验证码！">
                 <br>  <br>  <br>  <br>
                <span id="checkCodeInfo"></span>
-             
-                <input type="button"  onclick=sendMsg()  value="获取验证码">
-                <input type="submit"  id="submit1"  name="submit1" value="注册">
-               
+                <input type="button"  onclick=sendMsg()  value="获取验证码"  >
+                <input type="submit"  id="stuSubmit"  name="stuSubmit" value="注册" >
+                <span id="stuSubmitInfo"></span>
             </form>
             
         </div>
@@ -64,8 +63,9 @@
                 <input type="Captcha" class="Captcha" name="scheckCode"  id="scheckCode" placeholder="请输入验证码！">
                 <br>  <br>  <br>  <br>
                 <span id="scheckCodeInfo"></span>
-                <button onclick="sendMsg()">获取验证码</button>
-                <button type="submit" class="submit_button">注册</button>
+                <input type="button"  onclick=sendMsg()  value="获取验证码"  >
+                <input type="submit"  id="sellSubmit"  name="sellSubmit" value="注册" >
+                 <span id="sellSubmitInfo"></span>
                
             </form>
             
