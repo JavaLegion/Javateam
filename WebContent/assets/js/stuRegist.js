@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 function students(){
 	$("#students").slideUp(400);

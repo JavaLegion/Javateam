@@ -89,4 +89,52 @@ public class StudentInfoDAO {
 		}
 		return ends;
 	}
+	public static String changePwd(String stuId,String oldPwd) {
+		String ends=null;
+		Connection conn= null;
+		PreparedStatement ps= null; 
+		ResultSet rs= null;
+		String sql = "select count(*) from student where stuid=? and stupwd=?";
+		conn=JDBCUtil.getConnection();
+		try {
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, stuId);
+			ps.setString(2, oldPwd);
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		rs=JDBCUtil.executeQuery(ps);
+		try {
+			while (rs.next()) {
+				int result = rs.getInt(1);
+				ends =JDBCUtil.getServletValue(result);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConn(conn);
+		}
+		return ends;
+	}
+	public static String upDatePwd(String stuId,String stuPsd ) {
+		String ends=null;
+		Connection conn= null;
+		PreparedStatement ps= null; 
+		String sql = "update student set stupwd=? where stuid=?";
+		conn=JDBCUtil.getConnection();
+		try {
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, stuPsd);
+			ps.setString(2, stuId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		int i = JDBCUtil.executeupdate(ps);
+		ends =JDBCUtil.getServletValue(i);
+		JDBCUtil.closeConn(conn);
+		return ends;
+	}
+	
 }

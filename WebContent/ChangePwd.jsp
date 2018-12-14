@@ -15,8 +15,13 @@
 <div class="mid">
 <h1>修改密码</h1>
 
-
+ 	<form action="ChangStuPwdController" method="post">
         <table>
+         <tr>
+            <td class="">请输入用户名：</td>
+            <td><input type="text"  name="stuId"  id="stuId"></td>
+           <td><span id="stuIdInfo"></span></td> 
+        </tr>
         <tr>
             <td class="">请输入原始密码：</td>
             <td><input type="password"  name="oldPwd"  id="oldPwd"></td>
@@ -36,9 +41,12 @@
         <tr>
         	<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        	<input type="button"  value="提交"></td>
+        	<!-- <input type="button"  value="提交"></td> -->
+        	<input type="submit"  id="changPwdSubmit"  name="changPwdSubmit" value="注册" ></td>
+                <td><span id="changPwdSubmitInfo"></span></td>
         </tr>
     </table>    
+    </form>
 </div>	
 </body>
 </html>

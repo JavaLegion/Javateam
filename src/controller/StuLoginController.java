@@ -57,5 +57,5 @@ public class StuLoginController extends HttpServlet {
 			response.sendRedirect("LoginFai.jsp");
 		}
 	}
-	}
+}
 
