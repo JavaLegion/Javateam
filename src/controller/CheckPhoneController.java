@@ -37,8 +37,8 @@ public class CheckPhoneController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String phoneCode=(String) request.getSession().getAttribute("phoneCode");//
-			String checkCode=request.getParameter("id").trim();//获取填写的验证码
+			String phoneCode=(String) request.getSession().getAttribute("phoneCode");//
+			String checkCode=request.getParameter("checkCode").trim();//获取填写的验证码
 			 boolean flag=false;
 			  //和Session中的checkCode是否为一样
 						if(checkCode.equals(phoneCode)){
@@ -48,13 +48,12 @@ public class CheckPhoneController extends HttpServlet {
 						}
 						JSONObject json = new JSONObject();//使用json的格式法法
 						json.put("flag", flag);
-						System.out.println("222");
 					PrintWriter out = response.getWriter();
 					out.print(json.toString());
 					out.close();
 					System.out.println("checkCode:"+checkCode);
 					System.out.println("phoneCode:"+phoneCode);
-//					System.out.println(flag);
+					System.out.println(flag);
 					
 			
 			

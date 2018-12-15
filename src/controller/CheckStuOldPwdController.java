@@ -43,10 +43,7 @@ public class CheckStuOldPwdController extends HttpServlet {
 		
 		String stuId=request.getParameter("stuId").trim();//获取填写的用户名
 		String oldPwd=request.getParameter("oldPwd").trim();//获取填写的原密码
-		System.out.println("stuId="+stuId);
-		System.out.println("oldPwd="+oldPwd);
 		String ends=StudentInfoDAO.changePwd(stuId,oldPwd);
-		System.out.println("ends="+ends);
 		String end="1";
 		 boolean flag=false;
 					if(end.equals(ends)){
@@ -56,7 +53,6 @@ public class CheckStuOldPwdController extends HttpServlet {
 					}
 					JSONObject json = new JSONObject();//使用json的格式法法
 					json.put("flag", flag);
-					System.out.println("flag="+flag);
 				PrintWriter out = response.getWriter();
 				out.print(json.toString());
 				out.close();

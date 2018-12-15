@@ -27,7 +27,7 @@ table,tr,td{
 table{
 	margin:auto;
 	border-collapse:collapse;
-	width:50%;
+	width:80%;
 }
 tr
 {
@@ -39,12 +39,8 @@ td{
 	height:0px;
     vertical-align:bottom;
     padding:0px;
-    text-align:center;
 }
-.ttd{
-	width:100px;
-	float:left;
-}
+
 .request{
     width:180px;
 	height:30px;

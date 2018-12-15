@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,7 +20,7 @@
         <script src="assets/js/supersized.3.2.7.min.js" ></script>
         <script src="assets/js/supersized-init.js" ></script>
         <script src="assets/js/scripts.js" ></script>
-        <script src="assets/js/sturegist.js" ></script>
+        <script src="assets/js/stuRegist.js" ></script>
 		<script src="assets/js/sellRegist.js" ></script>
     </head>
 
