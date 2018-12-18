@@ -16,7 +16,7 @@
     <link href="css/robot.css" rel="stylesheet" type="text/css"/>
     <link href="css/search.css" rel="stylesheet" type="text/css"/>
     
-    <script src="js/index.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
@@ -70,7 +70,8 @@
                             <li>
                                   <div class="search bar">
                                           <form action="SeekJob" method="post">
-                                              <input type="text" id="keyWord"  name="keyWord"  placeholder="输入搜索的内容">
+                                              <input type="text" id="work" onkeyup="getMoreContents()"
+           										onblur="workBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
                                               <button type="submit"></button>
                                                <div id="popDiv"> 
              									<table id="content-table" bgcolor="#FFFAFA" border="0" cellspacing="0" cellpadding="0"> 

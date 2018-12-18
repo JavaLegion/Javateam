@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.Page;
 import bean.WorkInfo;
 import dao.SystemDAO;
 
@@ -36,9 +37,14 @@ public class IssueRecord extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
-		List<WorkInfo> lists=new ArrayList<>();
-		lists=SystemDAO.getDate("1");
-		request.setAttribute("userlist", lists);
+		int currentPage=1;
+		if(request.getParameter("currentPage")!=null){
+			currentPage=Integer.parseInt(request.getParameter("currentPage"));
+		}
+		int totalcount = 20;
+		// 传递总页数及当前页至myjsp.jsp页面
+		Page<WorkInfo> page = SystemDAO.getDate2(currentPage,totalcount);	
+		request.setAttribute("pagemsg", page);
 		request.getRequestDispatcher("IssueRecord.jsp").forward(request,response);
 	}
 

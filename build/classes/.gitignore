@@ -1,6 +1,5 @@
 /activation.jar
 /bean/
-/biz/
 /c3p0-0.9.1.2.jar
 /c3p0-config.xml
 /commons-beanutils-1.7.0.jar
@@ -19,7 +18,7 @@
 /mail.jar
 /mchange-commons-java-0.2.11.jar
 /mysql-connector-java-5.1.6-bin.jar
+/service/
 /servlet-api.jar
 /standard.jar
 /util/
-/service/
