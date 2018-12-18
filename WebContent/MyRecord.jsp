@@ -1,5 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,174 +11,37 @@
     <meta http-equiv="x-rim-auto-match" content="none">
     <title>兼职记录</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
-    
-    <script src="js/ie-emulation-modes-warning.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
 </head>
 <body>
 <div class="container marketing">
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
+         <c:forEach items="${userlist}" var="user"> 
+        <form action="DisplayDetails" method="post">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
+                        <h3>${user.workname}</h3>
+                        <h5>${user.workreq}</h5>
                     <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
+                       <span>${user.sworkdate}</span>
+                       <span>${user.fworkdate}</span>
+                       <span>${user.worktime}</span>
+                       <span>${user.worksalary}</span>
+                       <input type="hidden" name="workid" value="${user.workid}">
                     </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
+                    <span class="wpw-span">
+                    <input type="submit" value="查看详情">
+                    </span>
                     </dd>
                 </dl>
-            </a>
-<!--             <div><textarea></textarea></div> -->
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-        <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-            <a href="#">
-                <dl class="dl-horizontal">
-                    <dt><img src="images/logo2.jpg" alt=""/></dt>
-                    <dd>
-                        <h3>工作类型（例如：外卖员）</h3>
-                        <h5>兼职介绍</h5>
-                    <span class="wpw-span">
-                       <span>兼职时间地点</span>
-                       <span>工资</span>
-                    </span>
-                    <p><a href="#" class="btn btn-primary" role="button">评价</a></p>
-                    </dd>
-                </dl>
-            </a>
-        </div>
-
-    </div>
-    <!--电脑分页-->
-    <div class="row rog-page">
-        <nav aria-label="">
-            <ul class="pagination">
-                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
-                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">4 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">6 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#" aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
-            </ul>
-        </nav>
-    </div>
-    <!--电脑分页 end-->
-    <!--手机分页-->
-    <div class="row row-wphone">
-        <div class="row-phone">
-            <div>点击查看更多</div>
-            <div class="glyphicon glyphicon-menu-down"></div>
+        </form>
+        </c:forEach>
         </div>
     </div>
-    <!--手机分页 end-->
 </div>
 </body>
 </html>

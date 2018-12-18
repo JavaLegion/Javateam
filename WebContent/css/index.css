@@ -2,11 +2,14 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 body {
-    color: #f2f3b6;
+    color: #5a5a5a;
 }
 a:hover{
     text-decoration: none;
 }
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
     position: absolute;
     top: 0;
@@ -18,6 +21,7 @@ a:hover{
 .navbar{
     margin-bottom: 0;
 }
+/* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
     padding-right: 0;
     padding-left: 0;
@@ -65,6 +69,10 @@ a:hover{
 .navbar-navxg{
     background-color: rgba(255,255,255,0.8);
 }
+.carousel {
+    height:350px;
+}
+/* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     z-index: 10;
 }
@@ -114,7 +122,7 @@ a:hover{
     min-width: 100%;
     height: 350px;
 }
-/*共享文档*/
+/*推荐兼职*/
 .cont-gxwd{
     -moz-box-shadow: 1px 4px 8px #f0f0f0  inset;
     -webkit-box-shadow: 1px 4px 8px #f0f0f0  inset;
@@ -146,12 +154,66 @@ a:hover{
 .con-span i{
     font-size: 25px;
 }
-/*共享文档 end*/
-/* MARKETING CONTENT
--------------------------------------------------- */
+.con-span{
+        padding-top: 1%;
+    }
+/*推荐兼职 end*/
+@media (min-width: 768px) {
+    /* Navbar positioning foo */
+    .navbar-wrapper .container {
+        padding-right: 0;
+        padding-left:0;
+    }
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .navbar-logo{
+        width: 375px;
+        top: -4.2em;
+        margin-left: -42px !important;
+    }
+    .navbar-logo img{
+        width: 100%;
+    }
+    .navbar-navxg{
+        background-color: transparent;
+    }
+  /*轮播*/
+    .carousel{
+        height: 594px;
+    }
+    .carousel .item{
+        height: 594px;
+    }
+    .carousel-inner > .item > img{
+        height: 594px;
+    }
+    .glyimg-left,.glyimg-right{
+        width: 42px;
+        height: 80px;
+        margin-top: -10px;
+        opacity: 1;
+    }
+    .glyimg-left{
+        margin-left: -10px;
+    }
+    .car-slide .carousel-control{
+        color: #ececec;
+        width: 50%;
+    }
+    .glyimg-left,.glyimg-right{
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        display: inline-block;
+        margin-top: -10px;
+        width: 43px;
+        height:80px;
+    }
+    /*轮播 end*/
 
-/* Center align the text within the three columns below the carousel */
-/*list*/
+/*列表*/
 .marketing{
     padding-top:20%;
 }
@@ -193,474 +255,9 @@ a:hover{
 .col-wxg .dl-horizontal dd p{
     text-align: center;
 }
+/*列表结束*/
 
-.rog-page{
-    display: none;
-}
-.row-phone{
-    text-align: center;
-    color: #b8b8b8;
-    margin-bottom: 15px;
-}
-.cp-foonter{
-    background: #3e81b6;
-    -webkit-box-shadow:inset 0 0 32px #003d7e;
-    -moz-box-shadow:inset 0 0 32px #003d7e;
-    box-shadow:inset 0 0 32px #003d7e;
-}
-.pc-foot{
-    padding-top: 40px;
-    padding-bottom:50px;
-    display: none;
-}
-.pc-flist h3{
-    color: #fff;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-.pc-wwx img{
-    width: 217px;
-    height: 217px;
-}
-.pc-conp{
-    color: #fff;
-    font-size: 14px;
-}
-.pc-address{
-    font-size: 16px;
-    color: #fff;
-}
-.pc-address .dl-horizontal dt{
-    width: 80px;
-    text-align: left;
-}
-.pc-address .dl-horizontal dd{
-    margin-left: 80px;
-    margin-bottom: 20px;
-}
-.pc-flispad{
-    padding-left: 60px;
-}
-
-.pcy{
-    background: #3e81b6;
-    text-align: center;
-    color: #fff;
-    padding-top: 22px;
-    padding-bottom: 15px;
-}
-.pcy p a{
-    color: #fff;
-    padding: 0 4px;
-}
-.pcy span a{
-    color: #fff;
-}
-
-.ph-footer{
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-.ph-foimg img{
-    width: 100%;
-    height: auto;
-}
-.ph-focont{
-    padding-left: 0;
-    color: #fff;
-}
-.ph-focont h3{
-    margin-top: 0;
-    font-size: 20px;
-    margin-bottom:7px;
-}
-.ph-focont h4{
-    margin-top: 0;
-    font-size: 12px;
-    margin-bottom:7px;
-}
-.ph-focont .media{
-    margin-top: 0;
-    font-size: 12px;
-    margin-bottom:7px;
-}
-.ph-focont .media .media-left{
-    width:20%;
-    padding-right: 0;
-    white-space: nowrap;
-}
-
-.wpw-span{
-    color: #333333;
-    font-size: 14px;
-    display: block;
-    margin-top: 5%;
-}
-.wpw-span span{
-    display: block;
-    margin-bottom: 5px;
-}
-.cw-wxg {
-    padding-bottom: 0;
-    margin-bottom: 15px;
-}
-
-.cw-jd .thumbnail{
-    border: none;
-}
-.cw-jd .thumbnail .caption h3{
-    color: #3e81b6;
-    margin-top: 0;
-    margin-bottom: 2%;
-}
-.caption-jdp{
-    color: #888888;
-    line-height: 1.8;
-}
-.caption-jdpp{
-    color: #333333;
-}
-
-@media (min-width: 768px) {
-    /* Navbar positioning foo */
-    .navbar-wrapper .container {
-        padding-right: 0;
-        padding-left:0;
-    }
-    .navbar-wrapper .navbar {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    .navbar-logo{
-        width: 375px;
-        top: -4.2em;
-        margin-left: -42px !important;
-    }
-    .navbar-logo img{
-        width: 100%;
-    }
-    .navbar-navxg{
-        background-color: transparent;
-    }
-
-    /*轮播*/
-    .carousel{
-        height: 594px;
-    }
-    .carousel .item{
-        height: 594px;
-    }
-    .carousel-inner > .item > img{
-        height: 594px;
-    }
-    .glyimg-left,.glyimg-right{
-        width: 42px;
-        height: 80px;
-        margin-top: -10px;
-        opacity: 1;
-    }
-    .glyimg-left{
-        margin-left: -10px;
-    }
-    .car-slide .carousel-control{
-        color: #ececec;
-        width: 50%;
-    }
-    .glyimg-left,.glyimg-right{
-        position: absolute;
-        top: 50%;
-        z-index: 5;
-        display: inline-block;
-        margin-top: -10px;
-        width: 43px;
-        height:80px;
-    }
-    /*轮播 end*/
-    /*共享文档*/
-    .con-span{
-        padding-top: 3%;
-    }
-    .marketing{
-        padding-top:12%;
-    }
-    .col-wxg .dl-horizontal dt img{
-        height: 110px;
-    }
-    .col-wxg .dl-horizontal dd h3{
-        margin-top: 0;
-        margin-bottom: 7px;
-    }
-    .col-wxg .dl-horizontal dd h5{
-        margin-bottom: 7px;
-    }
-    .col-wxg .dl-horizontal dd div{
-        margin-bottom: 10px;
-    }
-    .col-wxg .dl-horizontal dd p{
-        text-align: left;
-    }
-    .row-wphone{
-        display: none;
-    }
-    .rog-page{
-        text-align: right;
-        display: block;
-    }
-    .rog-page .pagination > li > a, .pagination > li > span{
-        border: 1px solid #cccccc;
-        border-radius: 3px;
-        margin: 0 4px;
-        padding-top: 9px;
-    }
-    /*分页 end*/
-    /*footer*/
-    .cp-foonter{
-        background: #3e81b6;
-        -webkit-box-shadow:inset 0 0 32px #003d7e;
-        -moz-box-shadow:inset 0 0 32px #003d7e;
-        box-shadow:inset 0 0 32px #003d7e;
-    }
-    .pc-foot{
-        padding-top: 40px;
-        padding-bottom:50px;
-        display: block;
-    }
-    .pc-flist h3{
-        color: #fff;
-        font-size: 25px;
-        margin-bottom: 20px;
-    }
-    .pc-wwx img{
-        width: 217px;
-        height: 217px;
-    }
-    .pc-conp{
-        color: #fff;
-        font-size: 14px;
-    }
-    .pc-address{
-        font-size: 16px;
-        color: #fff;
-    }
-    .pc-address .dl-horizontal dt{
-        width: 80px;
-        text-align: left;
-    }
-    .pc-address .dl-horizontal dd{
-        margin-left: 80px;
-        margin-bottom: 20px;
-    }
-    .pc-flist{
-        padding-left: 0;
-    }
-    .pc-flispad{
-        padding-left: 0;
-    }
-
-    .pcy{
-        background: #3e81b6;
-        text-align: center;
-        color: #fff;
-        font-size: 16px;
-        padding-top: 22px;
-        padding-bottom: 15px;
-    }
-    .pcy p a{
-        color: #fff;
-        padding: 0 18px;
-        font-size: 12px;
-    }
-    .pcy span a{
-        color: #fff;
-    }
-    .ph-footer{
-        display: none;
-    }
-    .cw-wxg .dl-horizontal dt{
-        width: 350px;
-    }
-    .cw-wxg .dl-horizontal dt img{
-        height: 170px;
-    }
-    .cw-wxg .dl-horizontal dd{
-        margin-left: 375px;
-    }
-    .cw-wxg .dl-horizontal dd h3{
-        margin-top: 20px;
-        font-size: 22px;
-    }
-    .cw-wxg .dl-horizontal dd h5{
-        line-height: 1.5;
-    }
-    .wpw-span{
-        color: #333333;
-        font-size: 16px;
-        display: block;
-        margin-top: 5%;
-    }
-    .wpw-span span{
-        display:inline-block;
-        margin-bottom: 0;
-        margin-right: 65px;
-    }
-    .cw-wxg {
-        border-bottom: 1px solid #dbdbdb;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
-    .caption-jdp{
-        font-size: 16px;
-        line-height: 2;
-    }
-
-
-}
-
-@media (min-width: 992px) {
-    .con-span{
-        padding-top: 2.5%;
-    }
-    .marketing{
-        padding-top:10%;
-    }
-    .col-wxg .dl-horizontal dt{
-        width:190px;
-    }
-    .col-wxg .dl-horizontal dt img{
-        height: 120px;
-    }
-    .col-wxg .dl-horizontal dd{
-        margin-left: 205px;
-    }
-    .col-wxg .dl-horizontal dd h3{
-        font-size: 20px;
-        margin-top:0;
-    }
-    .col-wxg .dl-horizontal dd h5{
-        font-size: 16px;
-    }
-    .col-wxg .dl-horizontal dd div{
-        font-size: 14px;
-    }
-    .col-wxg .dl-horizontal dd p{
-        text-align:left;
-    }
-    .row-wphone{
-        display: none;
-    }
-    .rog-page{
-        text-align: right;
-        display: block;
-    }
-    .rog-page .pagination > li > a, .pagination > li > span{
-        border: 1px solid #cccccc;
-        border-radius: 3px;
-        margin: 0 4px;
-        padding-top: 9px;
-    }
-    .cp-foonter{
-        background: #3e81b6;
-        -webkit-box-shadow:inset 0 0 32px #003d7e;
-        -moz-box-shadow:inset 0 0 32px #003d7e;
-        box-shadow:inset 0 0 32px #003d7e;
-    }
-    .pc-foot{
-        padding-top: 40px;
-        padding-bottom:50px;
-        display: block;
-    }
-    .pc-flist h3{
-        color: #fff;
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-    .pc-wwx img{
-        width: 217px;
-        height: 217px;
-    }
-    .pc-conp{
-        color: #fff;
-        font-size: 14px;
-    }
-    .pc-address{
-        font-size: 16px;
-        color: #fff;
-    }
-    .pc-address .dl-horizontal dt{
-        width: 80px;
-        text-align: left;
-    }
-    .pc-address .dl-horizontal dd{
-        margin-left: 80px;
-        margin-bottom: 20px;
-    }
-    .pc-flispad{
-        padding-left: 60px;
-    }
-
-    .pcy{
-        background: #3e81b6;
-        text-align: center;
-        color: #fff;
-        font-size: 16px;
-        padding-top: 22px;
-        padding-bottom: 15px;
-    }
-    .pcy p a{
-        color: #fff;
-        padding: 0 18px;
-    }
-    .pcy span a{
-        color: #fff;
-    }
-    .ph-footer{
-        display: none;
-    }
-    .cw-wxg .dl-horizontal dt{
-        width: 350px;
-    }
-    .cw-wxg .dl-horizontal dt img{
-        height: 170px;
-    }
-    .cw-wxg .dl-horizontal dd{
-        margin-left: 375px;
-    }
-    .cw-wxg .dl-horizontal dd h3{
-        margin-top: 20px;
-    }
-    .cw-wxg .dl-horizontal dd h5{
-        line-height: 1.5;
-    }
-    .wpw-span{
-        color: #333333;
-        font-size: 16px;
-        display: block;
-        margin-top: 5%;
-    }
-    .wpw-span span{
-        display:inline-block;
-        margin-bottom: 0;
-        margin-right: 65px;
-    }
-    .cw-wxg {
-        border-bottom: 1px solid #dbdbdb;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
-    .caption-jdp{
-        font-size: 16px;
-        line-height: 2;
-    }
-
-
-}
-@media (min-width: 1200px){
-    .container {
-        width: 1200px;
-    }
-    .con-span{
-        padding-top: 1%;
-    }
+    /*列表*/
     .marketing{
         padding-top:5%;
     }
@@ -689,19 +286,9 @@ a:hover{
     .col-wxg .dl-horizontal dd p{
         text-align:left;
     }
-    .row-wphone{
-        display: none;
-    }
-    .rog-page{
-        text-align: right;
-        display: block;
-    }
-    .rog-page .pagination > li > a, .pagination > li > span{
-        border: 1px solid #cccccc;
-        border-radius: 3px;
-        margin: 0 4px;
-        padding-top: 9px;
-    }
+    /*列表 end*/
+
+    /*footer*/
     .cp-foonter{
         background: #3e81b6;
         -webkit-box-shadow:inset 0 0 32px #003d7e;
@@ -760,6 +347,10 @@ a:hover{
     .ph-footer{
         display: none;
     }
+    /*footer end*/
+   
+
+    /*票务信息*/
     .cw-wxg{
 
     }
@@ -795,8 +386,5 @@ a:hover{
         padding-bottom: 15px;
         margin-bottom: 15px;
     }
-    .caption-jdp{
-        font-size: 16px;
-        line-height: 2.5;
-    }
+
 }

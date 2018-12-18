@@ -13,6 +13,60 @@ import db.JDBCUtil;
 
 
 public class MerchantInfoDAO {
+	//登录
+	public static String MerchantLogin(String mernam, String merpwd) {
+		String ends=null;
+		Connection conn= null;
+		PreparedStatement ps= null; 
+		ResultSet rs= null;
+		String sql = "select count(*) from merchant where mernam=? and merpwd=?";
+		conn=JDBCUtil.getConnection();
+		try {
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, mernam);
+			ps.setString(2, merpwd);
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		rs=JDBCUtil.executeQuery(ps);
+		try {
+			while (rs.next()) {
+				int result = rs.getInt(1);
+				ends =JDBCUtil.getServletValue(result);
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConn(conn);
+		}
+		return ends;
+	}
+	//注册
+	public static String MerchantRegist(String mernam, String merpwd,String merphone) {
+		String ends=null;
+		Connection conn= null;
+		PreparedStatement ps= null; 
+		int i =0;
+		String sql = "insert into merchant(mernum,mernam,merpwd, merphone) values(null,?,?,?)";
+		conn=JDBCUtil.getConnection();
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setString(1, mernam);
+			ps.setString(2, merpwd);
+			ps.setString(3, merphone);
+			i = JDBCUtil.executeupdate(ps);
+			ends=JDBCUtil.getServletValue(i);
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConn(conn);
+		}
+	
+		return ends;
+	}
 	//发布兼职
 	public static void ReleaseWork(String workname,String worktime,String sworkdate,String fworkdate,String worksalary,String workreq ) throws ParseException{
 	

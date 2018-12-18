@@ -50,4 +50,16 @@ public class WorkInfo {
 	public void setWorkreq(String workreq) {
 		this.workreq = workreq;
 	}
+	public WorkInfo(String workid, String workname, String worktime, String sworkdate, String fworkdate,
+			String worksalary, String workreq) {
+		super();
+		this.workid = workid;
+		this.workname = workname;
+		this.worktime = worktime;
+		this.sworkdate = sworkdate;
+		this.fworkdate = fworkdate;
+		this.worksalary = worksalary;
+		this.workreq = workreq;
+	}
+	
 }
