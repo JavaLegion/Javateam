@@ -1,11 +1,11 @@
 /**
  * 
  */
-  var xmlHttp;
+	var xmlHttp;
     //获得用户输入内容的关联信息的函数
     function getMoreContents() {
         //首先要获得用户输入
-        var content = document.getElementById("keyword");
+        var content = document.getElementById("work");
         if (content.value == "") {
             clearContent();
             return;
@@ -14,9 +14,9 @@
         //所以我们要使用一个对象，叫做XmlHttp对象
         xmlHttp = createXMLHttp();
         //要给服务器发送数据
-        var url = "search?keyword=" + escape(content.value);
+       	var url=  "search?work=" + content.value;
         //true 表示js脚本会在send()方法之后继续执行，而不会等待来自服务器的响应
-        xmlHttp.open("GET", url, true);
+        xmlHttp.open("GET", encodeURI(url), true);
         //xmlHttp绑定回调方法，这个回调方法会在xmlHttp状态改变的时候调用
         //xmlHttp的状态0-4，我们只关心4(complete)这个状态，因为
         //当数据传输的过程完成之后，在调用回调方法才有意义
@@ -85,7 +85,7 @@
             };
             td.onmousedown = function() {
                 //当鼠标点击一个关联数据时，自动在输入框添加数据
-                document.getElementById("keyword").value = this.innerText;
+                document.getElementById("work").value = this.innerText;
 
             };
             //鼠标悬浮于关联数据上时，自动添加到输入框中
@@ -113,20 +113,20 @@
         var popDiv = document.getElementById("popDiv").style.border = "none";
     }
     //当输入框失去焦点的时候
-    function keywordBlur() {
+    function workBlur() {
         clearContent();
     }
     //设置显示关联信息的位置
     function setLocaltion() {
         //关联信息的显示位置要和输入框一致
-        var content = document.getElementById("keyword");
+        var content = document.getElementById("work");
         var width = content.offsetWidth;//输入框的长度
-        var left = content["offsetLeft"];//到左边框的距离
+        var right = content["offsetRight"];//到左边框的距离
         var top = content["offsetTop"] + content.offsetHeight;//到顶部的距离(加上输入框本身的高度)
         //获得显示数据的div
         var popDiv = document.getElementById("popDiv");
         popDiv.style.border = "gray 1px solid";
-        popDiv.style.left = left + "px";
+        popDiv.style.right = right + "px";
         popDiv.style.top = top + "px";
         popDiv.style.width = width + "px";
         document.getElementById("content-table").style.width = width + "px";
