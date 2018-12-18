@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.WorkInfo;
 import dao.SystemDAO;
-import net.sf.json.JSONArray;
 
 /**
- * Servlet implementation class SearchServlet
+ * Servlet implementation class IssueRecord
  */
-@WebServlet("/search")
-public class SearchServlet extends HttpServlet {
+@WebServlet("/IssueRecord")
+public class IssueRecord extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchServlet() {
+    public IssueRecord() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,24 +33,20 @@ public class SearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=utf-8");
+		List<WorkInfo> lists=new ArrayList<>();
+		lists=SystemDAO.getDate("1");
+		request.setAttribute("userlist", lists);
+		request.getRequestDispatcher("IssueRecord.jsp").forward(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-        String keyword = request.getParameter("keyword");
-        //System.out.println(keyword+"---------");
-        SystemDAO sys= new SystemDAO();
-        List<String> listData  = sys.getDate(keyword);
-        System.out.println(JSONArray.fromObject(listData));
-        response.getWriter().write(JSONArray.fromObject(listData).toString());
-    }
+
+	}
 
 }
-

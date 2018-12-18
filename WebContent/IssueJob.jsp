@@ -13,7 +13,7 @@
 <body>
 <div class="mid">
 <h1>发布兼职</h1>
-<form action="ReleaseWorkController" method="post">
+<form action="IssueJobController" method="post">
         <table>
         <tr>
             <td class="">工作类型：</td>
@@ -23,6 +23,8 @@
 			    <option value="无">请选择工作类型</option>
 				<option value="外卖员">外卖员</option>
 				<option value="服务员">服务员</option>
+				</select>
+				</div>
             </td>
         </tr>
         <tr>
@@ -81,25 +83,15 @@
             <div class="box1">
             	<select name="worksalary" id=""> 
             	<option value="0">请选择工资</option>
-            	<option value="0.5">0.5元/时</option>
 				<option value="1">1元/时</option>
-				<option value="1.5">1.5元/时</option>
 				<option value="2">2元/时</option>
-				<option value="2.5">2.5元/时</option>
 				<option value="3">3元/时</option>
-				<option value="3.5">3.5元/时</option>
 				<option value="4">4元/时</option>
-				<option value="4.5">4.5元/时</option>
 				<option value="5">5元/时</option>
-				<option value="5.5">5.5元/时</option>
 				<option value="6">6元/时</option>
-				<option value="6.5">6.5元/时</option>
 				<option value="7">7元/时</option>
-				<option value="7.5">7.5元/时</option>
 				<option value="8">8元/时</option>
-				<option value="8.5">8.5元/时</option>
 				<option value="9">9元/时</option>
-				<option value="9.5">9.5元/时</option>
 				<option value="10">10元/时</option>
 				<option value="11">11元/时</option>
 				<option value="12">12元/时</option>
@@ -139,6 +131,7 @@
 				<option value="800">800元/时</option>
 				<option value="1000">1000元/时</option>
 				<option value="2000">2000元/时</option>
+				</select>
 			</div>
             </td>
         </tr>
