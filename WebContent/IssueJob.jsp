@@ -6,9 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>发布兼职</title>
 <link href="css/message.css" rel="stylesheet">
-
 <script type="text/javascript" src="js/Calendar.js"></script>
-
 </head>
 <body>
 <div class="mid">

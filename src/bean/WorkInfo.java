@@ -1,17 +1,17 @@
 package bean;
 
 public class WorkInfo {
-	String workid;
+	String  workid;
 	String workname;
 	String worktime;
 	String sworkdate;
 	String fworkdate;
 	String worksalary;
 	String workreq;
-	public String getWorkid() {
+	public String  getWorkid() {
 		return workid;
 	}
-	public void setWorkid(String workid) {
+	public void setWorkid(String  workid) {
 		this.workid = workid;
 	}
 	public String getWorkname() {
@@ -50,7 +50,7 @@ public class WorkInfo {
 	public void setWorkreq(String workreq) {
 		this.workreq = workreq;
 	}
-	public WorkInfo(String workid, String workname, String worktime, String sworkdate, String fworkdate,
+	public WorkInfo(String  workid, String workname, String worktime, String sworkdate, String fworkdate,
 			String worksalary, String workreq) {
 		super();
 		this.workid = workid;

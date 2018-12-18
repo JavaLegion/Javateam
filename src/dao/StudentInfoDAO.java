@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import bean.WorkInfo;
 import  db.JDBCUtil;
 
 public class StudentInfoDAO {
@@ -139,6 +142,7 @@ public class StudentInfoDAO {
 		JDBCUtil.closeConn(conn);
 		return ends;
 	}
+	//找回密码
 	public static String stuBackPwd(String stuPhnum) {
 		String ends=null;
 		Connection conn= null;
@@ -166,7 +170,7 @@ public class StudentInfoDAO {
 		}
 		return ends;
 	}
-	//找回重制密码
+	//确认后更新密码
 		public static String backSutPwd(String stuPhnum,String stuPwd ) {
 			String ends=null;
 			Connection conn= null;
@@ -184,5 +188,43 @@ public class StudentInfoDAO {
 			ends =JDBCUtil.getServletValue(i);
 			JDBCUtil.closeConn(conn);
 			return ends;
+		}
+		public static  List<WorkInfo> seekJob(String keyWord) {
+			System.out.println("1111");
+			List<WorkInfo> lists=new ArrayList<>();
+			Connection conn= null;
+			PreparedStatement ps= null; 
+			ResultSet rs= null;
+			String key="";
+			String sql = "select *  from work1 where  workreq like ? or workname like ? or worksalary like ? ";
+			key="%"+keyWord.trim() + "%";
+			conn=JDBCUtil.getConnection();
+			try {
+				ps=conn.prepareStatement(sql);
+				ps.setString(1,key );
+				ps.setString(2,keyWord );
+				ps.setString(3,keyWord );
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+				
+			}
+			rs=JDBCUtil.executeQuery(ps);
+			System.out.println("333");
+			try {
+				while (rs.next()) {
+					System.out.println("4444");
+					WorkInfo w1 = new WorkInfo(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
+					lists.add(w1);
+					System.out.println("5555");
+				}
+				System.out.println("666");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("777");
+			}finally {
+				JDBCUtil.closeConn(conn);
+			}
+			return lists;
 		}
 }

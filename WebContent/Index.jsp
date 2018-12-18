@@ -71,8 +71,7 @@
                             <li>
                                   <div class="search bar">
                                           <form action="" method="">
-                                              <input type="text" id="keyword" name="keyword" onkeyup="getMoreContents()"
-           										onblur="keywordBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
+                                              <input type="text" id="keyWord" name="keyWord"  placeholder="输入搜索的内容">
                                               <button type="sumbit"></button>
                                                <div id="popDiv"> 
              									<table id="content-table" bgcolor="#FFFAFA" border="0" cellspacing="0" cellpadding="0"> 

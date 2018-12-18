@@ -1,4 +1,4 @@
-package biz;
+package service;
 
 public class SystemBiz {
 
