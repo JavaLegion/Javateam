@@ -88,6 +88,8 @@ $(function(){
 		}
 	})
 })
+
+
 	function sendMsg() {
 	var phnum=$("#stuPhnum").val();
 	$.ajax({

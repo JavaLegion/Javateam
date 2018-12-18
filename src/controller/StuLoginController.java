@@ -39,7 +39,7 @@ public class StuLoginController extends HttpServlet {
 		 String stuid = request.getParameter("stuid").trim();
 		 String stupsd = request.getParameter("psd").trim();
 		 String checkcode = request.getParameter("checkcode").trim();
-		 String code = (String) request.getSession().getAttribute("code");
+		 String code = (String) request.getSession().getAttribute("imgcode");
 
 		 //判断生成的验证码和填写的验证码是否正确
 		 boolean aBoolean=false;

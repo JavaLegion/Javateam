@@ -29,7 +29,7 @@ public class CodeServlet extends HttpServlet {
 
         // 将四位数字的验证码保存到Session中。
         HttpSession session = req.getSession();
-        session.setAttribute("code", codeMap.get("code").toString());
+        session.setAttribute("imgcode", codeMap.get("code").toString());
 
         // 禁止图像缓存。
         resp.setHeader("Pragma", "no-cache");

@@ -8,10 +8,10 @@ function sellers(){
 	$("#students").delay(400).slideDown(400);}
 
 $(function(){
-	var stuid=false ,stupsd1=false,  stupsd2=false,stuphnum=false,stucode=false;
+	var stuid=false ,stupsd1=false,  stupsd2=false,stuphnum=false,stuCode=false;
                                    	
 	$("#stuSubmit").click(function(){
-		if(stuid &&stupsd1&&stupsd2&&stuphnum&&stucode ){
+		if(stuid&&stupsd1&&stupsd2&&stuphnum&&stuCode ){
 			return true;
 		}
 		else
@@ -34,12 +34,12 @@ $(function(){
 		        success:function(result){
 		        	if(result.flag){
 		        		info.text("用户名填写正确").css('color','green');
+		        		stuid=true;
 		        	}else{
 		        		info.text("用户名不可用").css('color','red');
 		        	}
 		        } 
 		    });
-			stuid=true;
 		}else{
 			info.text("用户名不能为空").css('color','red');
 		}
@@ -86,19 +86,20 @@ $(function(){
 	})
 	
 	
-		$("#checkCode").blur(function(){
-		var  id=$(this).val();
+	$("#checkCode").blur(function(){
+		var  checkCode=$(this).val();
 		var info = $("#checkCodeInfo");
-		if(id){
+		if(checkCode){
 			$.ajax({
 		        url:"CheckPhoneController",
 		        type:"post",
 		        dataType:"json",
-		        data:{"id":id},
+		        data:{"checkCode":checkCode},
 		        success:function(result){
 		        	if(result.flag){
 		        		info.text("验证码填写正确").css('color','green');
-		        		stucode=true;
+		        		
+		        		stuCode=true;
 		        	}
 		        } 
 		    });

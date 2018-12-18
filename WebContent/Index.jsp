@@ -71,7 +71,7 @@
                             <li>
                                   <div class="search bar">
                                           <form action="" method="">
-                                              <input type="text" id="keyword" onkeyup="getMoreContents()"
+                                              <input type="text" id="keyword" name="keyword" onkeyup="getMoreContents()"
            										onblur="keywordBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
                                               <button type="sumbit"></button>
                                                <div id="popDiv"> 
