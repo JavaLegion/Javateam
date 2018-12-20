@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
          <c:forEach items="${userlist}" var="user"> 
-        <form action="DisplayDetails" method="post">
+        <form action="DisplayDetails" method="get">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
@@ -32,13 +32,13 @@
                        <span>${user.worktime}</span>
                        <span>${user.worksalary}</span>
                        <input type="hidden" name="workid" value="${user.workid}">
-                    </span>
-                    <span class="wpw-span">
-                    <input type="submit" value="查看详情">
+                       <span></span>
+                       <input type="submit" class="btn btn-primary" value="查看详情">
                     </span>
                     </dd>
                 </dl>
         </form>
+        <br><br>
         </c:forEach>
         </div>
     </div>

@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,20 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.Page;
 import bean.WorkInfo;
 import dao.StudentInfoDAO;
 
 /**
  * Servlet implementation class SeekJob
  */
-@WebServlet("/SeekJob")
-public class SeekJob extends HttpServlet {
+@WebServlet("/StuSeekJob")
+public class StuSeekJob extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SeekJob() {
+    public StuSeekJob() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,25 +31,29 @@ public class SeekJob extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String keyWord=request.getParameter("keyWord").trim();
+		
+		int currentPage=1;
+		if(request.getParameter("currentPage")!=null){
+			currentPage=Integer.parseInt(request.getParameter("currentPage"));
+		}
+		int totalcount = 20;
+		Page<WorkInfo> page=new Page<WorkInfo>();
+		System.out.println("keyWord`11:"+keyWord);
+		page=StudentInfoDAO.seekJob(keyWord,currentPage,totalcount);
+		request.setAttribute("pagemsg", page);
+		request.setAttribute("keyWord", keyWord);
+		request.getRequestDispatcher("IndexStu.jsp").forward(request,response);	
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		String keyWord=request.getParameter("keyWord").trim();
-		List<WorkInfo> lists=new ArrayList<>();
-		System.out.println("keyWord`11:"+keyWord);
-		lists=StudentInfoDAO.seekJob(keyWord);
-		for(int i = 0;i < lists.size();i++){
-		    System.out.println(lists.get(i).getWorkid());
-		}
-		request.setAttribute("userlist", lists);
-		request.getRequestDispatcher("IndexStu.jsp").forward(request,response);
+		
 		
 	}
 

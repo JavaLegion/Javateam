@@ -16,7 +16,7 @@
     <link href="css/robot.css" rel="stylesheet" type="text/css"/>
     <link href="css/search.css" rel="stylesheet" type="text/css"/>
     
-    <script src="js/index.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
@@ -29,10 +29,23 @@
 <body>
 <div class="navbar-wrapper">
     <div class="container">
+        <nav class="navbar  navbar-static-top">
             <div class="container">
+            <!-- 大学生兼职网logo -->
+                <div class="navbar-header navbar-relative">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-logo" href="#">
+                        <img src="images/.jpg" alt=""/>
+                    </a>
+                </div>
                 <div id="navbar" class="navbar-collapse collapse navbar-right">
                     <ul class="nav navbar-nav navbar-navxg">
-                        <li class="active"><a href="Indexpre.jsp">首页</a></li>
+                        <li class="active"><a href="IndexPre.jsp">首页</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">查找兼职 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -56,10 +69,10 @@
                                 </li>
                             <li>
                                   <div class="search bar">
-                                          <form action="" method="">
-                                              <input type="text" id="keyword" onkeyup="getMoreContents()"
-           										onblur="keywordBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
-                                              <button type="sumbit"></button>
+                                          <form action="PreSeekJob" method="get">
+                                              <input type="text" id="work" name="keyWord"onkeyup="getMoreContents()"
+           										onblur="workBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
+                                              <button type="submit"></button>
                                                <div id="popDiv"> 
              									<table id="content-table" bgcolor="#FFFAFA" border="0" cellspacing="0" cellpadding="0"> 
  									                <tbody id="content_table_body"> 
@@ -73,6 +86,25 @@
                     </ul>
                 </div>
             </div>
+        </nav>
+        <script>
+            $(document).ready(function(){
+                dropdownOpen();//调用
+            });
+            /**
+             * 鼠标划过就展开子菜单，免得需要点击才能展开
+             */
+            function dropdownOpen() {
+
+                var $dropdownLi = $('li.dropdown');
+
+                $dropdownLi.mouseover(function() {
+                    $(this).addClass('open');
+                }).mouseout(function() {
+                    $(this).removeClass('open');
+                });
+            }
+        </script>
     </div>
 </div>
 <div id="myCarousel" class="carousel slide car-slide" data-ride="carousel">
@@ -110,11 +142,14 @@
 
     </div>
 </div>
+</div>
+
 <div class="container marketing">
+    <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-         <c:forEach items="${userlist}" var="user"> 
-         <form>
+        <c:forEach items="${pagemsg.list}" var="user"> 
+        <form action="DisplayDetails" method="get">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
@@ -125,15 +160,35 @@
                        <span>${user.fworkdate}</span>
                        <span>${user.worktime}</span>
                        <span>${user.worksalary}</span>
-                    </span>
-                    <span class="wpw-span">
-                    <a href="Login.jsp" class="btn btn-primary" role="button">查看详情</a>
+                       <input type="hidden" name="workid" value="${user.workid}">
+                       <span></span>
+                       <input type="submit" class="btn btn-primary" value="查看详情">
                     </span>
                     </dd>
                 </dl>
-                </form>
+        </form>
+        <br><br>
         </c:forEach>
-<!--             <div><textarea></textarea></div> -->
+        
+        <table>
+			<tr>
+				<td class="">
+				   <span>第${requestScope.pagemsg.currPage}/ ${requestScope.pagemsg.totalPage}页</span> 
+				   <span>总记录数：${requestScope.pagemsg.totalCount } 每页显示:
+				                   ${requestScope.pagemsg.pageSize}</span> 
+				   <span>
+				       <c:if test="${requestScope.pagemsg.currPage != 1}">
+				           <a href="${pageContext.request.contextPath }/PreSeekJob?currentPage=1&keyWord=${keyWord}">[首页]</a> 
+				           <a href="${pageContext.request.contextPath }/PreSeekJob?currentPage=${requestScope.pagemsg.currPage-1}&keyWord=${keyWord}">[上一页]</a> 
+				       </c:if>
+				       <c:if test="${requestScope.pagemsg.currPage != requestScope.pagemsg.totalPage}">
+				           <a href="${pageContext.request.contextPath }/PreSeekJob?currentPage=${requestScope.pagemsg.currPage+1}&keyWord=${keyWord}">[下一页]</a>  
+				           <a href="${pageContext.request.contextPath }/PreSeekJob?currentPage=${requestScope.pagemsg.totalPage}&keyWord=${keyWord}">[尾页]</a>  
+				       </c:if>
+				   </span>
+		    	</td>
+			</tr>
+		</table>
         </div>
     </div>
 </div>
@@ -151,7 +206,6 @@
     </ul>
   </div>
 </div>
-<footer>
 
     <div class="cp-foonter">
         <div class="container">
@@ -192,24 +246,5 @@
             技术支持：<a href="#">x3512工作室</a>
         </span>
     </div>
-</footer>
 </body>
-        <script>
-            $(document).ready(function(){
-                dropdownOpen();//调用
-            });
-            /**
-             * 鼠标划过就展开子菜单，免得需要点击才能展开
-             */
-            function dropdownOpen() {
-
-                var $dropdownLi = $('li.dropdown');
-
-                $dropdownLi.mouseover(function() {
-                    $(this).addClass('open');
-                }).mouseout(function() {
-                    $(this).removeClass('open');
-                });
-            }
-        </script>
 </html>

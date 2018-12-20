@@ -4,12 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>登录成功!!!</title>
+<title>注册成功!!!</title>
 
 
+<!-- Javascript -->
+	<script src="assets/js/jquery-1.8.2.min.js" ></script>
+	<script src="assets/js/automaticSkip.js" ></script>
+	
+	
 </head>
-<body>
-登录成功!!!
+<body>恭喜你，注册成功!!!<br>
+
+<span id="sp" style="font-size:30px;"> 5</span><span>秒后自动跳转至登录页面 </span>
 
 
 </body>

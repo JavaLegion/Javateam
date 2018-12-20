@@ -43,7 +43,7 @@ $(function(){
 		var info = $("#checkCodeInfo");
 		if(checkCode){
 			$.ajax({
-		        url:"CheckPhoneController",
+		        url:"CheckPhoneCodeController",
 		        type:"post",
 		        dataType:"json",
 		        data:{"checkCode":checkCode},

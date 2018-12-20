@@ -7,6 +7,8 @@
 <title>发布兼职</title>
 <link href="css/message.css" rel="stylesheet">
 <script type="text/javascript" src="js/Calendar.js"></script>
+<script type="text/javascript" src="js/time.js"></script>
+<script src="assets/js/jquery-1.8.2.min.js" ></script>
 </head>
 <body>
 <div class="mid">
@@ -73,6 +75,7 @@
             <td class="">结束兼职时间：</td>
             <td >            
 		          <span><input name="fworkdate" type="text" id="fworkdate" class="time" size="10" maxlength="10" onClick="new Calendar().show(this);" readonly="readonly" /></span>
+<!--                   <span id="CheckTimeInfo"></span> -->
             </td>
             </tr>
         <tr>
@@ -135,7 +138,8 @@
         </tr>
         <tr>
            <td>
-           <input type="submit" value="确认发布">
+           <input type="button" value="核对信息" onClick="CheckTime()">
+           <input type="submit" value="确认发布" >
            </td>
            <td>
            <input type="reset" value="重置信息">

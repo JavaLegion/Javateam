@@ -16,7 +16,7 @@
     <link href="css/robot.css" rel="stylesheet" type="text/css"/>
     <link href="css/search.css" rel="stylesheet" type="text/css"/>
     
-    <script src="js/index.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
@@ -45,7 +45,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse navbar-right">
                     <ul class="nav navbar-nav navbar-navxg">
-                        <li class="active"><a href="IndexMer.jsp">首页</a></li>
+                        <li class="active"><a href="IndexStu.jsp">首页</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">查找兼职 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -58,8 +58,7 @@
 <!--                                 <li><a href="#">One more separated link</a></li> -->
                             </ul>
                         </li>
-                        <li><a href="IssueJob.jsp">发布兼职</a></li>
-                        <li><a href="IssueRecord">发布记录</a></li>
+                        <li><a href="MyRecord">兼职记录</a></li>
                              <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -70,10 +69,10 @@
                             </ul>
                             <li>
                                   <div class="search bar">
-                                          <form action="" method="">
-                                              <input type="text" id="keyword" onkeyup="getMoreContents()"
-           										onblur="keywordBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
-                                              <button type="sumbit"></button>
+                                          <form action="MerSeekJob" method="get">
+                                              <input type="text" id="work" name="keyWord"onkeyup="getMoreContents()"
+           										onblur="workBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
+                                              <button type="submit"></button>
                                                <div id="popDiv"> 
              									<table id="content-table" bgcolor="#FFFAFA" border="0" cellspacing="0" cellpadding="0"> 
  									                <tbody id="content_table_body"> 
@@ -143,11 +142,14 @@
 
     </div>
 </div>
+</div>
+
 <div class="container marketing">
+    <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-         <c:forEach items="${userlist}" var="user"> 
-        <form action="DisplayDetails" method="post">
+        <c:forEach items="${pagemsg.list}" var="user"> 
+        <form action="DisplayDetails" method="get">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
@@ -159,17 +161,35 @@
                        <span>${user.worktime}</span>
                        <span>${user.worksalary}</span>
                        <input type="hidden" name="workid" value="${user.workid}">
-                    </span>
-                    <span class="wpw-span">
-                    <input type="submit" value="查看详情"> 
+                       <span></span>
+                       <input type="submit" class="btn btn-primary" value="查看详情">
                     </span>
                     </dd>
                 </dl>
         </form>
+        <br><br>
         </c:forEach>
-<!--             <div><textarea></textarea></div> -->
+        
+        <table>
+			<tr>
+				<td class="">
+				   <span>第${requestScope.pagemsg.currPage}/ ${requestScope.pagemsg.totalPage}页</span> 
+				   <span>总记录数：${requestScope.pagemsg.totalCount } 每页显示:
+				                   ${requestScope.pagemsg.pageSize}</span> 
+				   <span>
+				       <c:if test="${requestScope.pagemsg.currPage != 1}">
+				           <a href="${pageContext.request.contextPath }/MerSeekJob?currentPage=1&keyWord=${keyWord}">[首页]</a> 
+				           <a href="${pageContext.request.contextPath }/MerSeekJob?currentPage=${requestScope.pagemsg.currPage-1}&keyWord=${keyWord}">[上一页]</a> 
+				       </c:if>
+				       <c:if test="${requestScope.pagemsg.currPage != requestScope.pagemsg.totalPage}">
+				           <a href="${pageContext.request.contextPath }/MerSeekJob?currentPage=${requestScope.pagemsg.currPage+1}&keyWord=${keyWord}">[下一页]</a>  
+				           <a href="${pageContext.request.contextPath }/MerSeekJob?currentPage=${requestScope.pagemsg.totalPage}&keyWord=${keyWord}">[尾页]</a>  
+				       </c:if>
+				   </span>
+		    	</td>
+			</tr>
+		</table>
         </div>
-
     </div>
 </div>
 
@@ -186,7 +206,6 @@
     </ul>
   </div>
 </div>
-<footer>
 
     <div class="cp-foonter">
         <div class="container">
@@ -194,7 +213,7 @@
                 <div class="col-sm-4 col-md-4 pc-flist">
                     <h3>扫一扫关注Java特工组</h3>
                     <div class="pc-wwx">
-                        <img src="images/weixin.png" alt=""/>
+                        <img src="images/wwx.jpg" alt=""/>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-4 pc-flist">
@@ -227,6 +246,5 @@
             技术支持：<a href="#">x3512工作室</a>
         </span>
     </div>
-</footer>
 </body>
 </html>

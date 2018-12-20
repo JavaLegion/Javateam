@@ -1,23 +1,28 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.SystemDAO;
+import net.sf.json.JSONArray;
+
 /**
- * Servlet implementation class MerRegisterController
+ * Servlet implementation class SearchServlet
  */
-@WebServlet("/MerRegisterController")
-public class MerRegisterController extends HttpServlet {
+@WebServlet("/search")
+public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MerRegisterController() {
+    public SearchServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +32,13 @@ public class MerRegisterController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		 request.setCharacterEncoding("utf-8");
+	        response.setCharacterEncoding("utf-8");
+	        String keyword = request.getParameter("work");
+	        SystemDAO sys= new SystemDAO();
+	        List<String> listData  = sys.get(keyword);
+	        System.out.println(JSONArray.fromObject(listData));
+	        response.getWriter().write(JSONArray.fromObject(listData).toString());
 	}
 
 	/**
@@ -35,7 +46,8 @@ public class MerRegisterController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		//doGet(request, response);
+    }
 
 }
+

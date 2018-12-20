@@ -50,28 +50,24 @@
         <div class="page-container"  id="sellers">
             <h1>商家注册(Regist)</h1>
              <button class="register_ff" id="change" onclick="sellers()"  >我是学生</button>
-            <form action="" method="post">
-                <input type="text" name="sellname"  id="sellname" class="username" placeholder="请输入您的用户名！">
-                <span id="sellnameInfo"></span>
-                <input type="password" name="spsd1"  id="spsd1"   class="password" placeholder="请输入您的用户密码！">
+            <form action="SellerRegisterController" method="post">
+                <input type="text" name="sellName"  id="sellName" class="username" placeholder="请输入您的用户名！">
+                <span id="sellNameInfo"></span>
+                <input type="password" name="sellerPsd1"  id="sellerPsd1"   class="password"  placeholder="请输入您的用户密码！">
                 <span id="spsd1Info"></span>
-                <input type="password" name="spsd2"   id="spsd2"  class="password" placeholder="请再次输入您的用户密码！">
+                <input type="password" name="sellerPsd2"   id="sellerPsd2"  class="password"  placeholder="请再次输入您的用户密码！">
                 <span id="spsd2Info"></span>
-                <input type="text" name="sphnum"  id="sphnum" class="phone" placeholder="请输入您的手机号码！">
+                <input type="text" name="sellerPhnum"  id="sellerPhnum" class="phone" placeholder="请输入您的手机号码！">
                 <span id="sphnumInfo"></span>
                 <input type="Captcha" class="Captcha" name="scheckCode"  id="scheckCode" placeholder="请输入验证码！">
                 <br>  <br>  <br>  <br>
                 <span id="scheckCodeInfo"></span>
                 <input type="button"  onclick=sendMsg()  value="获取验证码"  >
-                <input type="submit"  id="sellSubmit"  name="sellSubmit" value="注册" >
+                <input type="submit"  id="sellerSubmit"  name="sellerSubmit" value="注册" >
                  <span id="sellSubmitInfo"></span>
                
             </form>
-            
         </div>
-		
-
-
     </body>
 
 

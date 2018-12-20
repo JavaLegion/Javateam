@@ -32,20 +32,13 @@ public class DisplayDetails extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
+		System.out.println("jinru");
 		try {
 			String  workid=request.getParameter("workid");
+			System.out.println(workid);
 			List<WorkInfo> list=new ArrayList<>();
 			list=SystemDAO.getNowDate(workid);
 			request.setAttribute("userlist", list);
@@ -55,5 +48,13 @@ public class DisplayDetails extends HttpServlet {
 		}
 		request.getRequestDispatcher("JobMessage.jsp").forward(request,response);
 	}
+	
 
-}
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+
+
+}}

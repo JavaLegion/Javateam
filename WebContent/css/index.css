@@ -7,6 +7,16 @@ body {
 a:hover{
     text-decoration: none;
 }
+.mouseOver {
+    background: #708090;
+    color: #FFFAFA;
+}
+
+.mouseOut {
+    background: #FFFAFA;
+    color: #000;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
@@ -208,17 +218,7 @@ a:hover{
     text-align: center;
 }
 /*list end*/
-/*分页*/
 
-.rog-page{
-    display: none;
-}
-.row-phone{
-    text-align: center;
-    color: #b8b8b8;
-    margin-bottom: 15px;
-}
-/*分页 end*/
 /*footer*/
 .cp-foonter{
     background: #3e81b6;

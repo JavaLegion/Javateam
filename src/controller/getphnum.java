@@ -37,7 +37,7 @@ public class getphnum extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String phnum=request.getParameter("phnum").trim();//获取手机号
 		String code=GetMessageCode.getCode(phnum);//获取生成的验证码
-		System.out.println("code:"+code);
+		System.out.println("/getphnum,code:"+code);
 		request.getSession().setAttribute("phoneCode", code);
 		
 	

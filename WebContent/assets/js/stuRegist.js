@@ -9,7 +9,7 @@ function sellers(){
 
 $(function(){
 	var stuid=false ,stupsd1=false,  stupsd2=false,stuphnum=false,stuCode=false;
-                                   	
+	 
 	$("#stuSubmit").click(function(){
 		if(stuid&&stupsd1&&stupsd2&&stuphnum&&stuCode ){
 			return true;
@@ -49,10 +49,22 @@ $(function(){
 	$("#psd1").blur(function(){
 		var  id=$(this).val();
 		var info = $("#psd1Info");
+		var info1 = $("#psd2Info");
+		var psd2 = $("#psd2").val();
+		
 		if(id){
-			info.text(" √").css('color','green');
-			stupsd1=true;
-		}else{
+			if(psd2==""){
+				info.text(" √√√").css('color','green');
+			}else{
+				if(id==psd2){
+					info.text(" √").css('color','green');
+					stupsd1=true;
+					info1.text(" √").css('color','green');
+				}else{
+				info1.text(" 两次输入密码不一致").css('color','red');
+						}
+				}
+			}else{
 			info.text("密码不能为空").css('color','red');
 		}
 	})
@@ -66,6 +78,7 @@ $(function(){
 			if(psd1==psd2){
 				info.text(" √").css('color','green');
 				stupsd2=true;
+				stupsd1=true;
 			}else{
 			info.text(" 两次输入密码不一致").css('color','red');}
 		}else{
@@ -91,7 +104,7 @@ $(function(){
 		var info = $("#checkCodeInfo");
 		if(checkCode){
 			$.ajax({
-		        url:"CheckPhoneController",
+		        url:"CheckPhoneCodeController",
 		        type:"post",
 		        dataType:"json",
 		        data:{"checkCode":checkCode},

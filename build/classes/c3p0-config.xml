@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <c3p0-config>
     <!-- 默认配置，如果没有指定则使用这个配置 -->
     <default-config>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/part-time job?useSSL=false</property>
         <property name="user">root</property>
-        <property name="password">123</property>
+        <property name="password">123456</property>
         <!-- 初始化池大小 -->
         <property name="initialPoolSize">2</property>
         <!-- 最大空闲时间 -->

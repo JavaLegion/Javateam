@@ -53,6 +53,7 @@ public class CheckStuOldPwdController extends HttpServlet {
 					}
 					JSONObject json = new JSONObject();//使用json的格式法法
 					json.put("flag", flag);
+					System.out.println("flag="+flag);
 				PrintWriter out = response.getWriter();
 				out.print(json.toString());
 				out.close();

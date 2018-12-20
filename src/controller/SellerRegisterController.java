@@ -1,22 +1,25 @@
 package controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import service.sellerRegistService;
 import dao.StudentInfoDAO;
-/**
- * Servlet implementation class LoginController
- */
-@WebServlet("/StuLoginController")
-public class StuLoginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-    public StuLoginController() {
+/**
+ * Servlet implementation class MerRegisterController
+ */
+@WebServlet("/SellerRegisterController")
+public class SellerRegisterController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SellerRegisterController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,29 +36,26 @@ public class StuLoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		
-		 String stuid = request.getParameter("stuid").trim();
-		 String stupsd = request.getParameter("psd").trim();
-		 String checkcode = request.getParameter("checkcode").trim();
-		 String code = (String) request.getSession().getAttribute("imgcode");
+//	String code = (String) request.getSession().getAttribute("code");
 
-		 //判断生成的验证码和填写的验证码是否正确
-		 boolean aBoolean=false;
-			if (code.equalsIgnoreCase(checkcode)) {
-					aBoolean=true;
-			}
+		String sellerId = request.getParameter("sellName").trim();
+		String spsd1 = request.getParameter("sellerPsd1").trim();
+		String sellPhnum = request.getParameter("sellerPhnum").trim();
 		
-	String	endrs=StudentInfoDAO.Loginpart(stuid, stupsd);
-		
-		if (endrs.equals("1")&&aBoolean) {
-			 System.out.println("登录成功!!!");
-			response.sendRedirect("Index.jsp");
-		} else {
-			 System.out.println("登录失败!!!");
-			response.sendRedirect("LoginFai.jsp");
+		String ends = sellerRegistService.registPart(sellerId, spsd1, sellPhnum);
+
+		if (ends.equals("1")) {
+			System.out.println("注册成功，请选择重新登录");
+			response.sendRedirect("LoginSuc.jsp");
 		}
-	}
+		else { 
+			System.out.println("注册失败，请重新注册");
+			response.sendRedirect("Loginfail.jsp");
+			}
+		}
 }
+
 

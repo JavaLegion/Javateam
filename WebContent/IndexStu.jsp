@@ -16,7 +16,7 @@
     <link href="css/robot.css" rel="stylesheet" type="text/css"/>
     <link href="css/search.css" rel="stylesheet" type="text/css"/>
     
-    <script src="js/index.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
@@ -69,8 +69,9 @@
                             </ul>
                             <li>
                                   <div class="search bar">
-                                          <form action="SeekJob" method="post">
-                                              <input type="text" id="keyWord"  name="keyWord"  placeholder="输入搜索的内容">
+                                          <form action="StuSeekJob" method="get">
+                                              <input type="text" id="work" name="keyWord"onkeyup="getMoreContents()"
+           										onblur="workBlur()" onfocus="getMoreContents()" placeholder="输入搜索的内容">
                                               <button type="submit"></button>
                                                <div id="popDiv"> 
              									<table id="content-table" bgcolor="#FFFAFA" border="0" cellspacing="0" cellpadding="0"> 
@@ -142,11 +143,13 @@
     </div>
 </div>
 </div>
+
 <div class="container marketing">
+    <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-         <c:forEach items="${userlist}" var="user"> 
-        <form action="DisplayDetails" method="post">
+        <c:forEach items="${pagemsg.list}" var="user"> 
+        <form action="DisplayDetails" method="get">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
@@ -158,15 +161,34 @@
                        <span>${user.worktime}</span>
                        <span>${user.worksalary}</span>
                        <input type="hidden" name="workid" value="${user.workid}">
-                    </span>
-                    <span class="wpw-span">
-                    <input type="submit" value="查看详情"> 
+                       <span></span>
+                       <input type="submit" class="btn btn-primary" value="查看详情">
                     </span>
                     </dd>
                 </dl>
         </form>
+        <br><br>
         </c:forEach>
-<!--             <div><textarea></textarea></div> -->
+        
+        <table>
+			<tr>
+				<td class="">
+				   <span>第${requestScope.pagemsg.currPage}/ ${requestScope.pagemsg.totalPage}页</span> 
+				   <span>总记录数：${requestScope.pagemsg.totalCount } 每页显示:
+				                   ${requestScope.pagemsg.pageSize}</span> 
+				   <span>
+				       <c:if test="${requestScope.pagemsg.currPage != 1}">
+				           <a href="${pageContext.request.contextPath }/StuSeekJob?currentPage=1&keyWord=${keyWord}">[首页]</a> 
+				           <a href="${pageContext.request.contextPath }/StuSeekJob?currentPage=${requestScope.pagemsg.currPage-1}&keyWord=${keyWord}">[上一页]</a> 
+				       </c:if>
+				       <c:if test="${requestScope.pagemsg.currPage != requestScope.pagemsg.totalPage}">
+				           <a href="${pageContext.request.contextPath }/StuSeekJob?currentPage=${requestScope.pagemsg.currPage+1}&keyWord=${keyWord}">[下一页]</a>  
+				           <a href="${pageContext.request.contextPath }/StuSeekJob?currentPage=${requestScope.pagemsg.totalPage}&keyWord=${keyWord}">[尾页]</a>  
+				       </c:if>
+				   </span>
+		    	</td>
+			</tr>
+		</table>
         </div>
     </div>
 </div>
@@ -184,7 +206,6 @@
     </ul>
   </div>
 </div>
-<footer>
 
     <div class="cp-foonter">
         <div class="container">
@@ -225,6 +246,5 @@
             技术支持：<a href="#">x3512工作室</a>
         </span>
     </div>
-</footer>
 </body>
 </html>

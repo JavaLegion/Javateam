@@ -20,8 +20,8 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-xs-6 col-sm-12 col-md-12 col-wxg cw-wxg clearfix">
-         <c:forEach items="${userlist}" var="user"> 
-        <form action="DisplayDetails" method="post">
+         <c:forEach items="${pagemsg.list}" var="user"> 
+        <form action="DisplayDetails" method="get">
                 <dl class="dl-horizontal">
                     <dt><img src="images/logo2.jpg" alt=""/></dt>
                     <dd>
@@ -33,15 +33,33 @@
                        <span>${user.worktime}</span>
                        <span>${user.worksalary}</span>
                        <input type="hidden" name="workid" value="${user.workid}">
-                    </span>
-                    <span class="wpw-span">
-                    <input type="submit" value="查看详情">
+                       <span></span>
+                       <input type="submit" class="btn btn-primary" value="查看详情">
                     </span>
                     </dd>
                 </dl>
         </form>
+        <br><br>
         </c:forEach>
-<!--             <div><textarea></textarea></div> -->
+		<table>
+	<tr>
+	<td class="">
+   <span>第${requestScope.pagemsg.currPage}/ ${requestScope.pagemsg.totalPage}页</span> 
+   <span>总记录数：${requestScope.pagemsg.totalCount } 每页显示:
+                   ${requestScope.pagemsg.pageSize}</span> 
+   <span>
+       <c:if test="${requestScope.pagemsg.currPage != 1}">
+           <a href="${pageContext.request.contextPath }/IssueRecord?currentPage=1">[首页]</a> 
+           <a href="${pageContext.request.contextPath }/IssueRecord?currentPage=${requestScope.pagemsg.currPage-1}">[上一页]</a> 
+       </c:if>
+       <c:if test="${requestScope.pagemsg.currPage != requestScope.pagemsg.totalPage}">
+           <a href="${pageContext.request.contextPath }/IssueRecord?currentPage=${requestScope.pagemsg.currPage+1}">[下一页]</a>  
+           <a href="${pageContext.request.contextPath }/IssueRecord?currentPage=${requestScope.pagemsg.totalPage}">[尾页]</a>  
+       </c:if>
+   </span>
+    </td>
+	</tr>
+	</table>
         </div>
     </div>
 </div>

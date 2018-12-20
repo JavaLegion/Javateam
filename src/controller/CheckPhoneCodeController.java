@@ -13,14 +13,14 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * Servlet implementation class CheckPhoneController
  */
-@WebServlet("/CheckPhoneController")
-public class CheckPhoneController extends HttpServlet {
+@WebServlet("/CheckPhoneCodeController")
+public class CheckPhoneCodeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CheckPhoneController() {
+    public CheckPhoneCodeController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -51,8 +51,8 @@ public class CheckPhoneController extends HttpServlet {
 					PrintWriter out = response.getWriter();
 					out.print(json.toString());
 					out.close();
-					System.out.println("checkCode:"+checkCode);
-					System.out.println("phoneCode:"+phoneCode);
+					System.out.println("/checkphone,checkCode:"+checkCode);
+					System.out.println("/checkphone,phoneCode:"+phoneCode);
 					System.out.println(flag);
 					
 			

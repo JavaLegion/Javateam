@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Page;
 import bean.WorkInfo;
 import  db.JDBCUtil;
 
@@ -189,14 +190,21 @@ public class StudentInfoDAO {
 			JDBCUtil.closeConn(conn);
 			return ends;
 		}
-		public static  List<WorkInfo> seekJob(String keyWord) {
-			System.out.println("1111");
+		public static  Page<WorkInfo> seekJob(String keyWord,int currentPage,int totalCount) {
 			List<WorkInfo> lists=new ArrayList<>();
+			Page<WorkInfo> page=new Page<WorkInfo>();
 			Connection conn= null;
 			PreparedStatement ps= null; 
 			ResultSet rs= null;
+			page.setCurrPage(currentPage);
+			int pageSize = 4;
+			page.setPageSize(pageSize);
+			page.setTotalCount(totalCount);
+			double totalcount=totalCount;
+	        Double num=Math.ceil(totalcount/pageSize);
+	        page.setTotalPage(num.intValue());//转换为整数
 			String key="";
-			String sql = "select *  from work1 where  workreq like ? or workname like ? or worksalary like ? ";
+			String sql = "select *  from work1 where  workreq like ? or workname like ? or worksalary like ? limit ?,?";
 			key="%"+keyWord.trim() + "%";
 			conn=JDBCUtil.getConnection();
 			try {
@@ -204,27 +212,25 @@ public class StudentInfoDAO {
 				ps.setString(1,key );
 				ps.setString(2,keyWord );
 				ps.setString(3,keyWord );
+				ps.setInt(4, (currentPage-1)*pageSize);
+				ps.setInt(5, pageSize);
 			} catch (SQLException e) {
 
 				e.printStackTrace();
 				
 			}
 			rs=JDBCUtil.executeQuery(ps);
-			System.out.println("333");
 			try {
 				while (rs.next()) {
-					System.out.println("4444");
 					WorkInfo w1 = new WorkInfo(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
 					lists.add(w1);
-					System.out.println("5555");
 				}
-				System.out.println("666");
+				page.setList(lists);
 			} catch (SQLException e) {
 				e.printStackTrace();
-				System.out.println("777");
 			}finally {
 				JDBCUtil.closeConn(conn);
 			}
-			return lists;
+			return page;
 		}
 }

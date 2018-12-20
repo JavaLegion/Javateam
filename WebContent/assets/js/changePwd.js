@@ -39,9 +39,11 @@ $(function(){
 		        	"stuId":stuId},
 		        success:function(result){
 		        	if(result.flag){
+		        		
 		        		info.text("原密码填写正确").css('color','green');
 		        	}else{
 		        		info.text("原密码填写错误").css('color','red');
+		        		
 		        	}
 		        } 
 		    });
