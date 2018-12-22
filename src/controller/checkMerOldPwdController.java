@@ -1,24 +1,29 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import service.stuChangePwdService;
+import com.alibaba.fastjson.JSONObject;
+import service.sellerChangePwdService;
+import dao.StudentInfoDAO;
+
 /**
- * Servlet implementation class ChangStuPwdController
+ * Servlet implementation class checkMerOldPwdController
  */
-@WebServlet("/ChangStuPwdController")
-public class ChangStuPwdController extends HttpServlet {
+@WebServlet("/checkMerOldPwdController")
+public class checkMerOldPwdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChangStuPwdController() {
+    public checkMerOldPwdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,19 +41,23 @@ public class ChangStuPwdController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
-		 String stuId = request.getParameter("stuId").trim();
-		 String stuPsd = request.getParameter("newPwd1").trim();
-		 String ends=stuChangePwdService.upDatePwd(stuId, stuPsd);
-		 
-		 if (ends.equals("1")) {
-			 System.out.println("修改密码成功!!!");
-			response.sendRedirect("changeSuc.jsp");
-		} else {
-			 System.out.println("修改密码失败!!!");
-			response.sendRedirect("changeFail.jsp");
-		}
+		String stuId=request.getParameter("stuId").trim();//获取填写的用户名
+		String oldPwd=request.getParameter("oldPwd").trim();//获取填写的原密码
+		String ends=sellerChangePwdService.checkOldPwd(stuId, oldPwd);
+		String end="1";
+		 boolean flag=false;
+					if(end.equals(ends)){
+						flag = true;   //原密码填写正确                        
+					}else{
+						flag = false;   //  原密码填写正错误
+					}
+					JSONObject json = new JSONObject();//使用json的格式法法
+					json.put("flag", flag);
+					System.out.println("flag="+flag);
+				PrintWriter out = response.getWriter();
+				out.print(json.toString());
+				out.close();
+	
 	}
+
 }

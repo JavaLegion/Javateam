@@ -143,8 +143,8 @@ public class StudentInfoDAO {
 		JDBCUtil.closeConn(conn);
 		return ends;
 	}
-	//找回密码
-	public static String stuBackPwd(String stuPhnum) {
+	//找回密码(判断手机号是否存在)
+	public static String stuBackPwdOfphoneNum(String stuPhnum) {
 		String ends=null;
 		Connection conn= null;
 		PreparedStatement ps= null; 
@@ -172,7 +172,7 @@ public class StudentInfoDAO {
 		return ends;
 	}
 	//确认后更新密码
-		public static String backSutPwd(String stuPhnum,String stuPwd ) {
+		public static String backStuPwd(String stuPhnum,String stuPwd ) {
 			String ends=null;
 			Connection conn= null;
 			PreparedStatement ps= null; 
@@ -190,6 +190,7 @@ public class StudentInfoDAO {
 			JDBCUtil.closeConn(conn);
 			return ends;
 		}
+		//查找兼职
 		public static  Page<WorkInfo> seekJob(String keyWord,int currentPage,int totalCount) {
 			List<WorkInfo> lists=new ArrayList<>();
 			Page<WorkInfo> page=new Page<WorkInfo>();

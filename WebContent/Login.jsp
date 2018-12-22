@@ -33,11 +33,12 @@
 					</select>
                 <input type="text" name="id" class="username" placeholder="请输入您的用户名！">
                 <input type="password" name="psd" class="password" placeholder="请输入您的用户密码！">
+                <br>
+                <a href="BackPwd.jsp"  style="font-size:20px; color:white">忘记密码</a>
               <input type="Captcha" class="Captcha" name="checkcode" placeholder="请输入验证码！">
               <br><br>   
                  <img id="imgObj" alt="验证码"  src="${pageContext.request.contextPath}/getCode">
-             <a href="#" onclick="changeImg()"> 换一张</a>
-             
+             <a href="#" onclick="changeImg()" style="color:white"> 换一张</a>
                <button type="submit" class="submit_button">登录</button>
               <!--  <button class="register_button" onclick="javascript:window.location.href='Register.jsp';">注册</button> -->
             </form>

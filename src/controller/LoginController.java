@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import service.sellerLoginService;
 import service.stuLoginService;
 /**
@@ -37,6 +39,7 @@ public class LoginController extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		String  num=request.getParameter("consumer");//获取选中的数字"1"
+		
 		System.out.println("num="+num);
 		 String name = request.getParameter("id").trim();
 		 String psd = request.getParameter("psd").trim();

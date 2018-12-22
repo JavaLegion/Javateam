@@ -9,7 +9,7 @@
 <link href="css/message.css" rel="stylesheet">
 <!-- js -->
 <script src="assets/js/jquery-1.8.2.min.js" ></script>
-<script src="assets/js/changePwd.js" ></script>
+<script src="assets/js/changeStuPwd.js" ></script>
 </head>
 <body>
 <div class="mid">

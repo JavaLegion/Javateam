@@ -86,5 +86,99 @@ public class MerchantInfoDAO {
 			e.printStackTrace();
 		}			
 	}
-	//显示兼职信息
+	//修改密码（更新密码）
+		public static String upDatePwd(String merpwd,String mernam ) {
+			String ends=null;
+			Connection conn= null;
+			PreparedStatement ps= null; 
+			String sql = "update merchant set merpwd=? where mernam=?";
+			conn=JDBCUtil.getConnection();
+			try {
+				ps=conn.prepareStatement(sql);
+				ps.setString(1, merpwd);
+				ps.setString(2, mernam);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			int i = JDBCUtil.executeupdate(ps);
+			ends =JDBCUtil.getServletValue(i);
+			JDBCUtil.closeConn(conn);
+			return ends;
+		}
+		//检查原密码是否填写正确
+		public static String checkOldPwd(String stuId,String oldPwd) {
+			String ends=null;
+			Connection conn= null;
+			PreparedStatement ps= null; 
+			ResultSet rs= null;
+			String sql = "select count(*) from merchant where mernam=? and merpwd=?";
+			conn=JDBCUtil.getConnection();
+			try {
+				ps=conn.prepareStatement(sql);
+				ps.setString(1, stuId);
+				ps.setString(2, oldPwd);
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+			rs=JDBCUtil.executeQuery(ps);
+			try {
+				while (rs.next()) {
+					int result = rs.getInt(1);
+					ends =JDBCUtil.getServletValue(result);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				JDBCUtil.closeConn(conn);
+			}
+			return ends;
+		}
+		//找回密码(判断手机号是否存在)
+		public static String sellerBackPwdOfphoneNum(String stuPhnum) {
+			String ends=null;
+			Connection conn= null;
+			PreparedStatement ps= null; 
+			ResultSet rs= null;
+			String sql = "select count(*) from merchant where merphone=?";
+			conn=JDBCUtil.getConnection();
+			try {
+				ps=conn.prepareStatement(sql);
+				ps.setString(1, stuPhnum);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			rs=JDBCUtil.executeQuery(ps);
+			try {
+				while (rs.next()) {
+					int result = rs.getInt(1);
+					ends =JDBCUtil.getServletValue(result);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				JDBCUtil.closeConn(conn);
+			}
+			return ends;
+		}
+		//确认后更新密码
+				public static String backSellerPwd(String stuPhnum,String stuPwd ) {
+					String ends=null;
+					Connection conn= null;
+					PreparedStatement ps= null; 
+					String sql = "update merchant set merpwd=? where merphone=?";
+					conn=JDBCUtil.getConnection();
+					try {
+						ps=conn.prepareStatement(sql);
+						ps.setString(1, stuPwd);
+						ps.setString(2, stuPhnum);
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					int i = JDBCUtil.executeupdate(ps);
+					ends =JDBCUtil.getServletValue(i);
+					JDBCUtil.closeConn(conn);
+					return ends;
+				}
 }

@@ -65,6 +65,7 @@
                                 <li><a href="Message.jsp">我的信息</a></li>
                                 <li><a href="ChangeMsg.jsp">修改基本信息</a></li>
                                 <li><a href="ChangePwd.jsp">修改密码</a></li>
+                                 <li><a href="BackPwd.jsp">修改密码</a></li>
                                 <li><a href="ChangePwd.jsp">注销</a></li>
                             </ul>
                             <li>

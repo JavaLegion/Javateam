@@ -16,6 +16,7 @@ $(function(){
 	
 	$("#stuPhnum").blur(function(){
 		var  stuPhnum=$(this).val();
+		var consumerNum=$("#consumer").val();
 		var info = $("#stuPhnumInfo");
 		if(stuPhnum){
 			$.ajax({
@@ -23,6 +24,7 @@ $(function(){
 		        type:"post",
 		        dataType:"json",
 		        data:{"stuPhnum":stuPhnum,
+		        	"consumerNum":consumerNum
 		        	},
 		        success:function(result){
 		        	if(result.flag){

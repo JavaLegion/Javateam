@@ -16,7 +16,12 @@
 <h1>找回密码</h1>
 
  	<form action="backStuPwd" method="post">
+ 	 <select id="consumer" name="consumer">
+						<option value="1"  id="student">学生用户</option>
+						<option value="2"  id="seller">商家用户</option>
+					</select>
         <table>
+        
          <tr>
             <td class="">请输入手机号：</td>
             <td><input type="text"  name="stuPhnum"  id="stuPhnum"></td>

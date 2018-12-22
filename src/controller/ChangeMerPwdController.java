@@ -6,20 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.StudentInfoDAO;
-
+import service.sellerChangePwdService;
 /**
- * Servlet implementation class backStuPwd
+ * Servlet implementation class ChangeMerPwdController
  */
-@WebServlet("/backStuPwd")
-public class backStuPwd extends HttpServlet {
+@WebServlet("/ChangeMerPwdController")
+public class ChangeMerPwdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public backStuPwd() {
+    public ChangeMerPwdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,14 +34,12 @@ public class backStuPwd extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
-		 String stuPhnum= request.getParameter("stuPhnum").trim();
-		 String stuPsd = request.getParameter("newPwd1").trim();
-		 String ends=StudentInfoDAO.backSutPwd( stuPhnum, stuPsd );
+		 String mernam = request.getParameter("stuId").trim();
+		 String merpwd = request.getParameter("newPwd1").trim();
+		 String ends=sellerChangePwdService.upDatePwd(merpwd, mernam);
 		 
 		 if (ends.equals("1")) {
 			 System.out.println("修改密码成功!!!");
@@ -53,6 +49,5 @@ public class backStuPwd extends HttpServlet {
 			response.sendRedirect("changeFail.jsp");
 		}
 	}
-	
 
 }

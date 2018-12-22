@@ -1,29 +1,27 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.alibaba.fastjson.JSONObject;
-
+import service.sellerBackPwdService;
+import service.stuBackPwd;
 import dao.StudentInfoDAO;
 
 /**
- * Servlet implementation class stuBackPwd
+ * Servlet implementation class backStuPwd
  */
-@WebServlet("/checkStuPhnumIsExist")
-public class checkStuPhnumIsExist extends HttpServlet {
+@WebServlet("/backStuPwd")
+public class backPwdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public checkStuPhnumIsExist() {
+    public backPwdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,26 +38,31 @@ public class checkStuPhnumIsExist extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
-		 String stuPhnum = request.getParameter("stuPhnum").trim();
-		 String ends=StudentInfoDAO.stuBackPwd( stuPhnum );
+		String ends=null;
+		 String stuPhnum= request.getParameter("stuPhnum").trim();
+		 String stuPwd = request.getParameter("newPwd1").trim();
+		 String consumerNum=(String) request.getSession().getAttribute("consumerNum");
+		 System.out.println("backPwdCon:consumerNum"+consumerNum);
+		 if(consumerNum.equals("1")) {
+			  ends=stuBackPwd.stuBackPwd(stuPhnum, stuPwd);
+		 }else {
+			  ends=sellerBackPwdService.sellerBackPwd(stuPhnum, stuPwd);
+		 }
+		
 		 
-		 String end="1";
-		 boolean flag=false;
-					if(end.equals(ends)){
-						flag = true;   //手机号填写正确                        
-					}else{
-						flag = false;   //手机号填写正错误
-					}
-					JSONObject json = new JSONObject();//使用json的格式法法
-					json.put("flag", flag);
-				PrintWriter out = response.getWriter();
-				out.print(json.toString());
-				out.close();
+		 if (ends.equals("1")) {
+			 System.out.println("修改密码成功!!!");
+			response.sendRedirect("changeSuc.jsp");
+		} else {
+			 System.out.println("修改密码失败!!!");
+			response.sendRedirect("changeFail.jsp");
+		}
 	}
-	
 	
 
 }
